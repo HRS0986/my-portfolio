@@ -498,65 +498,75 @@
                             <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                                 <div class="portfolio-item portfolio-full">
                                     <div class="portfolio-item-inner">
-                                        <a href="assets/images/portfolio1.jpg" data-lightbox="example-1">
-                                            <img src="assets/images/portfolio1.jpg" alt="Portfolio">
+                                        <a href="assets/images/MailMate.jpg" data-lightbox="example-1">
+                                            <img src="assets/images/MailMate.jpg" alt="Portfolio">
                                         </a>
 
                                         <ul class="portfolio-categories">
                                             <li>
-                                                <a href="#">Figma</a>
+                                                <a href="#">Ionic</a>
                                             </li>
                                             <li>
-                                                <a href="#">Framer</a>
+                                                <a href="#">Angular</a>
                                             </li>
                                             <li>
-                                                <a href="#">WordPress</a>
+                                                <a href="#">Firebase</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">FCM</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h2><a href="#">Bureau - Architecture Studio Website</a></h2>
+                                    <h2><a href="#">MailMate - Android App For Smart Letterbox</a></h2>
                                 </div>
                             </div>
 
                             <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
                                 <div class="portfolio-item portfolio-half">
                                     <div class="portfolio-item-inner">
-                                        <a href="assets/images/portfolio2.jpg" data-lightbox="example-1">
-                                            <img src="assets/images/portfolio2.jpg" alt="Portfolio">
+                                        <a href="assets/images/Spex.JPEG.jpg" data-lightbox="example-1">
+                                            <img src="assets/images/Spex-1.png" alt="Portfolio">
                                         </a>
 
-                                        <img src="assets/images/portfolio2.jpg" alt="Portfolio">
+                                        <img src="assets/images/Spex-1.png" alt="Portfolio">
 
                                         <ul class="portfolio-categories">
                                             <li>
-                                                <a href="#">WordPress</a>
+                                                <a href="#">Angular</a>
                                             </li>
                                             <li>
-                                                <a href="#">Larevel/PHP</a>
+                                                <a href="#">Bootstrap</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Firebase</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h2><a href="#">Moonex WordPress Theme</a></h2>
+                                    <h2><a href="#">Spex - Spotify Playlist Exporter</a></h2>
                                 </div>
                             </div>
 
                             <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
                                 <div class="portfolio-item portfolio-half">
                                     <div class="portfolio-item-inner">
-                                        <a href="assets/images/portfolio3.jpg" data-lightbox="example-1">
-                                            <img src="assets/images/portfolio3.jpg" alt="Portfolio">
+                                        <a href="assets/images/tf.png" data-lightbox="example-1">
+                                            <img src="assets/images/tf.png" alt="Portfolio">
                                         </a>
 
                                         <ul class="portfolio-categories">
                                             <li>
-                                                <a href="#">Figma</a>
+                                                <a href="#">Angular</a>
                                             </li>
                                             <li>
-                                                <a href="#">Webflow</a>
+                                                <a href="#">Firebase</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">RxJs</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h2><a href="#">Taskly Dashboard</a></h2>
+                                    <h2><a href="#">TerraFlex - Ledger Management System For Real Estate Business</a>
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -755,10 +765,8 @@
                         <h3 class="scroll-animation" data-animation="fade_from_bottom">heshanhfernando@gmail.com</h3>
                         <p id="required-msg">* Marked fields are required to fill.</p>
 
-                        <form class="contact-form scroll-animation" data-animation="fade_from_bottom" method="POST"
-                              action="https://wpriverthemes.com/HTML/drake/mailer.php">
-                            <div class="alert alert-success messenger-box-contact__msg" style="display: none"
-                                 role="alert">
+                        <form class="contact-form scroll-animation" onsubmit="sendmail()" data-animation="fade_from_bottom" method="POST"                              >
+                            <div class="alert alert-success d-none" id="result-alert">
                                 Your message was sent successfully.
                             </div>
                             <div class="row">
@@ -771,7 +779,7 @@
                                 <div class="col-md-6">
                                     <div class="input-group">
                                         <label for="email">Email <sup>*</sup></label>
-                                        <input type="email" name="email" id="email" placeholder="Your email adress">
+                                        <input type="email" name="email" id="email" placeholder="Your email address">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -799,19 +807,7 @@
                                     <div class="input-group">
                                         <label for="message">message</label>
                                         <textarea name="message" id="message"
-                                                  placeholder="Wrire your message here ..."></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="input-group upload-attachment">
-                                        <div>
-                                            <label for="upload-attachment">
-                                                <i class="las la-cloud-upload-alt"></i> add an attachment
-                                                <input type="file" name="file" id="upload-attachment">
-                                            </label>
-
-                                        </div>
-
+                                                  placeholder="Write your message here ..."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -840,6 +836,49 @@
 <script src="assets/js/lightbox.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/ajax-form.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init("XnWYYthFr7l2h5-aB");
+    })();
+
+    function sendmail() {
+        const fullName = document.getElementById("full-name").value;
+        const email = document.getElementById("email").value;
+        const contactNo = document.getElementById("phone-number").value;
+        const subject = document.getElementById("subject").value;
+        const budget = document.getElementById("budget").value;
+        const message = document.getElementById("message").value;
+
+        const params = {
+            from_name: fullName,
+            from_email: email,
+            contact: contactNo,
+            subject: subject,
+            budget: budget,
+            message: message
+        };
+
+        emailjs.send('service_0x8rund', 'template_nqip39n', params).then(() => {
+            document.getElementById("result-alert").classList.remove("d-none");
+            setTimeout(() => {
+                document.getElementById("result-alert").classList.add("d-none");
+            }, 3000);
+        }).catch(() => {
+            document.getElementById("result-alert").classList.remove("d-none");
+            document.getElementById("result-alert").classList.remove("alert-success");
+            document.getElementById("result-alert").classList.add("alert-danger");
+            document.getElementById("result-alert").innerHTML = "Something went wrong. Please try again later.";
+            setTimeout(() => {
+                document.getElementById("result-alert").classList.add("d-none");
+                document.getElementById("result-alert").classList.add("alert-success");
+                document.getElementById("result-alert").classList.remove("alert-danger");
+                document.getElementById("result-alert").innerHTML = "Your message was sent successfully.";
+            }, 3000);
+        });
+    }
+</script>
 </body>
 
 </html>

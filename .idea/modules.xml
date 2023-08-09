@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MyPortfolio.iml" filepath="$PROJECT_DIR$/.idea/MyPortfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Angular/SPE/.idea/SPE.iml" filepath="$PROJECT_DIR$/../Angular/SPE/.idea/SPE.iml" />
     </modules>
   </component>
 </project>
