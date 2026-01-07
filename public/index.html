@@ -58,7 +58,8 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#"
                         class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500">
-                        Hirusha <span class="text-gray-700 dark:text-gray-200">Fernando</span>
+                        <span id="nav-first-name"></span> <span id="nav-last-name"
+                            class="text-gray-700 dark:text-gray-200"></span>
                     </a>
                 </div>
 
@@ -142,18 +143,14 @@
                 </div>
                 <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
                     Hey, It's
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500">
-                        &nbsp;Hirusha
+                    <span id="hero-first-name"
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500">
                     </span><br>
                     <span id="typewriter"
                         class="text-3xl md:text-5xl text-gray-600 dark:text-gray-400 mt-2 block min-h-[1.5em]"></span>
-                    <span class="sr-only">Building Intelligence for the Web.</span>
+                    <span id="hero-sr-tagline" class="sr-only"></span>
                 </h1>
-                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
-                    AI-focused web application developer with 5+ years of experience building
-                    real-world digital products. Final-year BSc (Hons) Artificial Intelligence
-                    undergraduate at the University of Moratuwa, Sri Lanka, passionate about
-                    solving challenging problems with AI and machine learning.
+                <p id="hero-about" class="text-lg text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact"
@@ -167,22 +164,7 @@
                 </div>
 
                 <!-- Social Icons -->
-                <div class="flex items-center gap-6 pt-4">
-                    <a href="https://github.com/HRS0986"
-                        class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl"
-                        target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/hirusha-fdo/"
-                        class="text-gray-400 hover:text-blue-600 transition-colors text-2xl" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://stackoverflow.com/users/12063253/hirusha-fernando"
-                        class="text-gray-400 hover:text-orange-500 transition-colors text-2xl" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-stack-overflow"></i></a>
-                    <a href="https://heshanhfernando.medium.com/"
-                        class="text-gray-400 hover:text-black dark:hover:text-white transition-colors text-2xl"
-                        target="_blank" rel="noopener noreferrer"><i class="fab fa-medium"></i></a>
-                    <a href="https://buymeacoffee.com/hirushafernando"
-                        class="text-gray-400 hover:text-yellow-400 transition-colors text-2xl" target="_blank"
-                        rel="noopener noreferrer"><i class="fas fa-coffee"></i></a>
+                <div id="hero-socials" class="flex items-center gap-6 pt-4">
                 </div>
             </div>
 
@@ -208,7 +190,7 @@
                                     class="text-yellow-600 dark:text-yellow-400">Developer</span> {<br>
                                 &nbsp;&nbsp;<span class="text-purple-500">constructor</span>() {<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">this</span>.name = <span
-                                    class="text-green-500">'Hirusha'</span>;<br>
+                                    id="mockup-name" class="text-green-500"></span>;<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">this</span>.role = <span
                                     class="text-green-500">'Developer'</span>;<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">this</span>.status = <span
@@ -235,76 +217,8 @@
                 <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="relative border-l border-gray-200 dark:border-gray-700 ml-4 md:ml-0 md:pl-0 space-y-12">
-                <!-- Timeline Item 1 -->
-                <div class="md:flex items-start group">
-                    <!-- Dot -->
-                    <div
-                        class="absolute -left-[5px] mt-1.5 w-3 h-3 bg-primary-500 rounded-full border border-white dark:border-gray-900 md:hidden">
-                    </div>
-
-                    <div class="md:w-1/3 md:text-right md:pr-8 mb-2 md:mb-0">
-                        <span class="text-sm font-semibold text-primary-500 tracking-wide uppercase">2023 -
-                            Present</span>
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1">Senior AI Developer</h3>
-                        <p class="text-gray-500 dark:text-gray-400">TechInnovate Corp</p>
-                    </div>
-
-                    <!-- Desktop Dot & Line -->
-                    <div
-                        class="hidden md:block absolute left-1/3 ml-[-6px] w-3 h-3 bg-primary-500 rounded-full border-2 border-white dark:border-gray-900 z-10 mt-1.5 group-hover:scale-125 transition-transform">
-                    </div>
-
-                    <div class="md:w-2/3 md:pl-8">
-                        <div
-                            class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all">
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Leading the integration of LLMs into customer support platforms. Optimized inference
-                                costs by 30% using model quantization. Architected a microservices-based backend using
-                                Node.js and Python.
-                            </p>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-md">Python</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-md">AWS
-                                    SageMaker</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="md:flex items-start group">
-                    <div
-                        class="absolute -left-[5px] mt-1.5 w-3 h-3 bg-gray-300 dark:bg-gray-600 rounded-full border border-white dark:border-gray-900 md:hidden">
-                    </div>
-
-                    <div class="md:w-1/3 md:text-right md:pr-8 mb-2 md:mb-0">
-                        <span
-                            class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-wide uppercase">2021
-                            - 2023</span>
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1">Full Stack Developer</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Creative Solutions Ltd</p>
-                    </div>
-
-                    <div
-                        class="hidden md:block absolute left-1/3 ml-[-6px] w-3 h-3 bg-gray-300 dark:bg-gray-600 rounded-full border-2 border-white dark:border-gray-900 z-10 mt-1.5">
-                    </div>
-
-                    <div class="md:w-2/3 md:pl-8">
-                        <div
-                            class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all">
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Developed scalable web applications for e-commerce clients. Implemented real-time
-                                analytics dashboards using React and D3.js. Managed CI/CD pipelines and deployment
-                                strategies.
-                            </p>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-md">React</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-md">Node.js</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="experience-list"
+                class="relative border-l border-gray-200 dark:border-gray-700 ml-4 md:ml-0 md:pl-0 space-y-12">
             </div>
         </div>
     </section>
@@ -315,33 +229,7 @@
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
                 <i class="fas fa-graduation-cap text-primary-500"></i> Education
             </h2>
-            <div class="space-y-6">
-                <div
-                    class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Master of Science in Computer
-                            Science</h3>
-                        <p class="text-primary-500 font-medium">Stanford University</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Specialization in Artificial
-                            Intelligence & Machine Learning</p>
-                    </div>
-                    <span
-                        class="text-sm font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full whitespace-nowrap">2019
-                        - 2021</span>
-                </div>
-
-                <div
-                    class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Bachelor of Engineering in IT</h3>
-                        <p class="text-primary-500 font-medium">Tech Institute of Technology</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">First Class Honors, Lead of Robotics
-                            Club</p>
-                    </div>
-                    <span
-                        class="text-sm font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full whitespace-nowrap">2015
-                        - 2019</span>
-                </div>
+            <div id="education-list" class="space-y-6">
             </div>
         </div>
     </section>
@@ -363,24 +251,7 @@
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
                         <i class="fas fa-code text-primary-500"></i> Web Development
                     </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">React.js</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">Next.js</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">TypeScript</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">Tailwind
-                            CSS</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">Node.js</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">PostgreSQL</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">GraphQL</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">Docker</span>
+                    <div id="web-skills-list" class="flex flex-wrap gap-3">
                     </div>
                 </div>
 
@@ -390,25 +261,7 @@
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
                         <i class="fas fa-brain text-accent-500"></i> Artificial Intelligence
                     </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">Python</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">PyTorch</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">TensorFlow</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">OpenCV</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">NLP
-                            (HuggingFace)</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">LangChain</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">Pandas/NumPy</span>
-                        <span
-                            class="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-sm font-medium">OpenAI
-                            API</span>
+                    <div id="ai-skills-list" class="flex flex-wrap gap-3">
                     </div>
                 </div>
             </div>
@@ -423,118 +276,7 @@
                 <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div
-                    class="group bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                        <!-- Placeholder for Project Image -->
-                        <div
-                            class="w-full h-full flex items-center justify-center bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400">
-                            <i class="fas fa-robot text-4xl"></i>
-                        </div>
-                        <div class="absolute bottom-4 left-4 z-20">
-                            <h3 class="text-white text-xl font-bold">AI Content Gen</h3>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm line-clamp-3">
-                            A SaaS platform that uses GPT-4 to generate SEO-optimized blog posts. Features include
-                            keyword analysis and automated posting to CMS.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded dark:bg-blue-900/30 dark:text-blue-300">Next.js</span>
-                            <span
-                                class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded dark:bg-green-900/30 dark:text-green-300">OpenAI</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <a href="#"
-                                class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 text-sm font-medium flex items-center gap-1">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#"
-                                class="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium flex items-center gap-1">
-                                Live Demo <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div
-                    class="group bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                        <div
-                            class="w-full h-full flex items-center justify-center bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400">
-                            <i class="fas fa-eye text-4xl"></i>
-                        </div>
-                        <div class="absolute bottom-4 left-4 z-20">
-                            <h3 class="text-white text-xl font-bold">Vision Analytics</h3>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm line-clamp-3">
-                            Real-time computer vision system for retail stores to analyze customer foot traffic and
-                            heatmap generation using YOLOv8.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-700 rounded dark:bg-yellow-900/30 dark:text-yellow-300">Python</span>
-                            <span
-                                class="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded dark:bg-purple-900/30 dark:text-purple-300">OpenCV</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <a href="#"
-                                class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 text-sm font-medium flex items-center gap-1">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#"
-                                class="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium flex items-center gap-1">
-                                Live Demo <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div
-                    class="group bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                        <div
-                            class="w-full h-full flex items-center justify-center bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400">
-                            <i class="fas fa-shopping-cart text-4xl"></i>
-                        </div>
-                        <div class="absolute bottom-4 left-4 z-20">
-                            <h3 class="text-white text-xl font-bold">E-Shop Pro</h3>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm line-clamp-3">
-                            A full-featured e-commerce platform with stripe integration, admin dashboard, and AI-powered
-                            product recommendations.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 text-xs font-medium bg-cyan-100 text-cyan-700 rounded dark:bg-cyan-900/30 dark:text-cyan-300">React</span>
-                            <span
-                                class="px-2 py-1 text-xs font-medium bg-red-100 text-red-700 rounded dark:bg-red-900/30 dark:text-red-300">Firebase</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <a href="#"
-                                class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 text-sm font-medium flex items-center gap-1">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#"
-                                class="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium flex items-center gap-1">
-                                Live Demo <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
         </div>
     </section>
@@ -547,72 +289,7 @@
                 <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Card 1 -->
-                <article
-                    class="flex flex-col h-full bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all">
-                    <div class="p-6 flex-1">
-                        <div class="text-sm text-primary-500 mb-2 font-semibold">Dec 12, 2023</div>
-                        <h3
-                            class="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-primary-500 transition-colors">
-                            <a href="#">The Future of LLMs in Web Apps</a>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            Exploring how Large Language Models are reshaping the way we build user interfaces and
-                            backend logic...
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 mt-auto">
-                        <a href="#"
-                            class="text-sm font-medium text-gray-900 dark:text-white hover:text-primary-500 inline-flex items-center gap-1">
-                            Read more <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Card 2 -->
-                <article
-                    class="flex flex-col h-full bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all">
-                    <div class="p-6 flex-1">
-                        <div class="text-sm text-primary-500 mb-2 font-semibold">Nov 28, 2023</div>
-                        <h3
-                            class="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-primary-500 transition-colors">
-                            <a href="#">Optimizing React for Performance</a>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            A deep dive into React.memo, useMemo, and useCallback. When to use them and when they might
-                            hurt performance...
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 mt-auto">
-                        <a href="#"
-                            class="text-sm font-medium text-gray-900 dark:text-white hover:text-primary-500 inline-flex items-center gap-1">
-                            Read more <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Card 3 -->
-                <article
-                    class="flex flex-col h-full bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all">
-                    <div class="p-6 flex-1">
-                        <div class="text-sm text-primary-500 mb-2 font-semibold">Oct 15, 2023</div>
-                        <h3
-                            class="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-primary-500 transition-colors">
-                            <a href="#">Understanding Vector Databases</a>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            Why vector databases like Pinecone and Milvus are essential for modern AI applications
-                            involving semantic search...
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 mt-auto">
-                        <a href="#"
-                            class="text-sm font-medium text-gray-900 dark:text-white hover:text-primary-500 inline-flex items-center gap-1">
-                            Read more <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </article>
+            <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
         </div>
     </section>
@@ -626,41 +303,23 @@
                     class="md:w-5/12 bg-gradient-to-br from-primary-600 to-primary-800 p-10 text-white flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
-                        <p class="text-blue-100 mb-8 leading-relaxed">
-                            I'm currently available for freelance work or part-time opportunities. Have a project in
-                            mind? Let's talk.
+                        <p id="contact-availability" class="text-blue-100 mb-8 leading-relaxed">
                         </p>
                         <div class="space-y-4">
                             <div class="flex items-start gap-4">
                                 <i class="fas fa-envelope mt-1 text-blue-200"></i>
-                                <span>heshanhfernando@gmail.com</span>
+                                <span id="contact-email"></span>
                             </div>
                             <div class="flex items-start gap-4">
                                 <i class="fas fa-map-marker-alt mt-1 text-blue-200"></i>
-                                <span>Colombo, LK</span>
+                                <span id="contact-location"></span>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-12">
                         <p class="text-blue-200 text-sm mb-4">Reach out to me</p>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/HRS0986" target="_blank" rel="noopener noreferrer"
-                                class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><i
-                                    class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/hirusha-fdo/" target="_blank" rel="noopener noreferrer"
-                                class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a href="https://stackoverflow.com/users/12063253/hirusha-fernando" target="_blank"
-                                rel="noopener noreferrer"
-                                class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><i
-                                    class="fab fa-stack-overflow"></i></a>
-                            <a href="https://heshanhfernando.medium.com/" target="_blank" rel="noopener noreferrer"
-                                class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><i
-                                    class="fab fa-medium"></i></a>
-                            <a href="https://buymeacoffee.com/hirushafernando" target="_blank" rel="noopener noreferrer"
-                                class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><i
-                                    class="fas fa-coffee"></i></a>
+                        <div id="contact-socials" class="flex gap-4">
                         </div>
                     </div>
                 </div>
@@ -716,15 +375,17 @@
             <div class="text-center md:text-left">
                 <span
                     class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500">
-                    Hirusha<span class="text-gray-700 dark:text-gray-200"> Fernando</span>
+                    <span id="footer-first-name"></span><span id="footer-last-name"
+                        class="text-gray-700 dark:text-gray-200"></span>
                 </span>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">© 2026 Hirusha Fernando. All rights reserved.
+                <p id="footer-copyright" class="text-sm text-gray-500 dark:text-gray-400 mt-2">
                 </p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 
