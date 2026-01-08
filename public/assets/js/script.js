@@ -95,7 +95,7 @@ function populatePortfolio(data) {
         const { personal, socials } = data;
         document.getElementById('nav-first-name').textContent = personal.firstName;
         document.getElementById('nav-last-name').textContent = personal.lastName;
-        document.getElementById('hero-first-name').textContent = `\u00A0${personal.firstName}`;
+        document.getElementById('hero-first-name').textContent = `\u00A0${personal.firstName},`;
         document.getElementById('hero-sr-tagline').textContent = personal.heroTagline;
         document.getElementById('hero-about').textContent = personal.about;
         document.getElementById('mockup-name').textContent = `'${personal.firstName}'`;
@@ -199,11 +199,12 @@ function populatePortfolio(data) {
             const p = document.createElement('div');
             p.className = 'group bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1';
             p.innerHTML = `
-                <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden relative">
+                <div class="h-48 bg-slate-200 dark:bg-slate-700 overflow-hidden relative">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                    <div class="w-full h-full flex items-center justify-center bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400">
-                        <i class="${project.icon} text-4xl"></i>
-                    </div>
+                    ${project.thumbnail ? `<img src="${project.thumbnail}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">` : `
+                    <div class="w-full h-full flex items-center justify-center bg-slate-300 dark:bg-slate-600 text-slate-500 dark:text-slate-400">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                    </div>`}
                     <div class="absolute bottom-4 left-4 z-20">
                         <h3 class="text-white text-xl font-bold">${project.title}</h3>
                     </div>
@@ -214,12 +215,17 @@ function populatePortfolio(data) {
                         ${project.tags.map(t => `<span class="px-2 py-1 text-xs font-medium bg-primary-100 text-primary-700 rounded dark:bg-primary-900/30 dark:text-primary-300">${t}</span>`).join('')}
                     </div>
                     <div class="flex justify-between items-center pt-2">
-                        <a href="${project.github}" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 text-sm font-medium flex items-center gap-1">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                        <a href="${project.live}" class="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium flex items-center gap-1">
+                        <div class="flex gap-3">
+                            ${project.github.map((link, i) => `
+                                    <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 text-sm font-medium flex items-center gap-1">
+                                        <i class="fab fa-github"></i>${link.title}
+                                    </a>
+                                `).join('')}
+                        </div>
+                        ${project.live && project.live !== '#' ? `
+                        <a href="${project.live}" target="_blank" rel="noopener noreferrer" class="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium flex items-center gap-1">
                             Live Demo <i class="fas fa-external-link-alt text-xs"></i>
-                        </a>
+                        </a>` : ''}
                     </div>
                 </div>
             `;

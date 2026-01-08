@@ -168,15 +168,26 @@ window.portfolioData = {
     },
     "projects": [
         {
-            "title": "AI Content Gen",
-            "description": "A SaaS platform that uses GPT-4 to generate SEO-optimized blog posts. Features include keyword analysis and automated posting to CMS.",
+            "title": "AI Powered Call Center Communication Analyzer",
+            "description": "AI-based system to analyze customer feedback call recordings and provide insightful analytics and data visualizations",
             "tags": [
-                "Next.js",
-                "OpenAI"
+                "Angular",
+                "FastAPI",
+                "LangChain",
+                "MongoDB"
             ],
-            "github": "#",
+            "github": [
+                {
+                    "url": "https://github.com/HRS0986/iCMS-Frontend",
+                    "title": "Frontend"
+                },
+                {
+                    "url": "https://github.com/HRS0986/ICSMS-Call-Analyzer-Backend",
+                    "title": "Backend"
+                }
+            ],
             "live": "#",
-            "icon": "fas fa-robot"
+            "thumbnail": "/public/assets/images/call.jpg"
         },
         {
             "title": "Vision Analytics",
@@ -185,9 +196,9 @@ window.portfolioData = {
                 "Python",
                 "OpenCV"
             ],
-            "github": "#",
+            "github": [],
             "live": "#",
-            "icon": "fas fa-eye"
+            "thumbnail": "/assets/images/vision.jpg"
         },
         {
             "title": "E-Shop Pro",
@@ -196,9 +207,9 @@ window.portfolioData = {
                 "React",
                 "Firebase"
             ],
-            "github": "#",
+            "github": [],
             "live": "#",
-            "icon": "fas fa-shopping-cart"
+            "thumbnail": ""
         }
     ],
     "blogs": [
