@@ -144,6 +144,7 @@ function populatePortfolio(data) {
                 <div class="md:w-1/3 md:text-right md:pr-8 mb-2 md:mb-0">
                     <span class="text-sm font-semibold ${index === 0 ? 'text-primary-500' : 'text-gray-500 dark:text-gray-400'} tracking-wide uppercase">${exp.period}</span>
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1">${exp.role}</h3>
+                    <p class="text-gray-500 dark:text-gray-400">${exp.type}</p>
                     <p class="text-gray-500 dark:text-gray-400">${exp.company}</p>
                 </div>
                 <div class="hidden md:block absolute left-1/3 ml-[-6px] w-3 h-3 ${index === 0 ? 'bg-primary-500' : 'bg-gray-300 dark:bg-gray-600'} rounded-full border-2 border-white dark:border-gray-900 z-10 mt-1.5 ${index === 0 ? 'group-hover:scale-125 transition-transform' : ''}"></div>

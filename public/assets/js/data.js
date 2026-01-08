@@ -49,23 +49,72 @@ window.portfolioData = {
     ],
     "experience": [
         {
-            "period": "2023 - Present",
-            "role": "Senior AI Developer",
-            "company": "TechInnovate Corp",
-            "description": "Leading the integration of LLMs into customer support platforms. Optimized inference costs by 30% using model quantization. Architected a microservices-based backend using Node.js and Python.",
+            "period": "2025 August - 2025 October",
+            "role": "Associate Software Engineer - AI",
+            "type": "Part-time",
+            "company": "Ariso Technologies",
+            "description": "Optimized AI agents to reduce response latency, structured outputs for WhatsApp automation, and developed MCP tools integrated with LangGraph-based AI agents.",
             "skills": [
-                "Python",
-                "AWS SageMaker"
+                "FastAPI",
+                "LangChain",
             ]
         },
         {
-            "period": "2021 - 2023",
-            "role": "Full Stack Developer",
-            "company": "Creative Solutions Ltd",
-            "description": "Developed scalable web applications for e-commerce clients. Implemented real-time analytics dashboards using React and D3.js. Managed CI/CD pipelines and deployment strategies.",
+            "period": "2025 Feb - 2025 July",
+            "role": "Intern AI Engineer",
+            "type": "Full-time",
+            "company": "Ariso Technologies",
+            "description": "Designed and deployed AI agent systems using vector databases for agent memory, implemented service discovery with HashiCorp Consul, maintained Linux-based deployments, and built a Python-based Agent Development Kit for agent creation and orchestration.",
             "skills": [
-                "React",
-                "Node.js"
+                "FastAPI",
+                "LangChain",
+                "LangGraph",
+                "PG Vector",
+                "MCP",
+                "PostgreSQL",
+                "Qdrant",
+                "Redis Vector"
+            ]
+        },
+        {
+            "period": "2022 January - 2025 January",
+            "role": "Full Stack Developer",
+            "type": "Part-time",
+            "company": "Crede Tecchnologies",
+            "description": "Developed reusable UI components with Blazor, Ant Design Blazor, and Bootstrap, and built SaaS web applications for healthcare sector using ASP.NET Core, Blazor, jQuery, EF Core, and MS SQL.",
+            "skills": [
+                "ASP.Net Core",
+                "Blazor",
+                "Entity Framework Core",
+                "MS SQL Server",
+                "Ant Blazor"
+            ]
+        },
+        {
+            "period": "2022 January - 2023 January",
+            "role": "Freelance Angular Developer",
+            "type": "Part-time",
+            "company": "Self-Employed",
+            "description": "Developed and maintained web applications using Angular and Firebase, collaborating with clients to deliver responsive, scalable, and high-performance frontend solutions.",
+            "skills": [
+                "Angular",
+                "Firebase",
+                "Bootstrap",
+                "Angular Material"
+            ]
+        },
+        {
+            "period": "2020 December - 2021 December",
+            "role": "Trainee Full Stack Developer",
+            "type": "Full-time",
+            "company": "Crede Tecchnologies",
+            "description": "Applied Agile practices using Jira for effective team coordination and timely delivery, managed source control with Git and Bitbucket, and led development of a scalable health portal using Django, jQuery, Bootstrap, and PostgreSQL.",
+            "skills": [
+                "jQuery",
+                "Python",
+                "Django",
+                "PostgreSQL",
+                "Bootstrap"
             ]
         }
     ],
@@ -87,22 +136,34 @@ window.portfolioData = {
         "web": [
             "React.js",
             "Next.js",
+            "Angular",
             "TypeScript",
             "Tailwind CSS",
-            "Node.js",
+            "Bootstrap",
+            "jQuery",
+            "Blazor",
+            "Ant Blazor",
+            "ASP.Net Core",
+            "Entity Framework Core",
+            "MS SQL Server",
+            "MySQL",
+            "FastAPI",
             "PostgreSQL",
-            "GraphQL",
-            "Docker"
+            "Docker",
+            "Mongo DB",
         ],
         "ai": [
             "Python",
-            "PyTorch",
-            "TensorFlow",
-            "OpenCV",
-            "NLP (HuggingFace)",
+            "scikit-lear",
+            "PG Vector",
             "LangChain",
+            "LangGraph",
             "Pandas/NumPy",
-            "OpenAI API"
+            "OpenAI API",
+            "Neo4j",
+            "MCP",
+            "Qdrant",
+            "Redis Vector"
         ]
     },
     "projects": [
