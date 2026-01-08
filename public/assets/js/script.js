@@ -230,17 +230,21 @@ function populatePortfolio(data) {
         const blogList = document.getElementById('blog-list');
         data.blogs.forEach(blog => {
             const b = document.createElement('article');
-            b.className = 'flex flex-col h-full bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all';
+            b.className = 'flex flex-col h-full bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all group';
             b.innerHTML = `
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                    <img src="${blog.thumbnail}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
                 <div class="p-6 flex-1">
                     <div class="text-sm text-primary-500 mb-2 font-semibold">${blog.date}</div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-primary-500 transition-colors">
-                        <a href="${blog.url}">${blog.title}</a>
+                        <a href="${blog.url}" target="_blank" rel="noopener noreferrer">${blog.title}</a>
                     </h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">${blog.description}</p>
                 </div>
                 <div class="px-6 pb-6 mt-auto">
-                    <a href="${blog.url}" class="text-sm font-medium text-gray-900 dark:text-white hover:text-primary-500 inline-flex items-center gap-1">
+                    <a href="${blog.url}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-900 dark:text-white hover:text-primary-500 inline-flex items-center gap-1">
                         Read more <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>

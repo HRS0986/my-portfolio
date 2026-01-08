@@ -203,22 +203,25 @@ window.portfolioData = {
     ],
     "blogs": [
         {
-            "date": "Dec 12, 2023",
-            "title": "The Future of LLMs in Web Apps",
-            "description": "Exploring how Large Language Models are reshaping the way we build user interfaces and backend logic...",
-            "url": "#"
+            "date": "April 07, 2025",
+            "title": "Adding Prompts to MCP Server",
+            "description": "Step-by-step guide to add reusable, parameterized prompts to a local MCP server and integrate them with Claude Desktop to streamline repetitive tasks like text refinement and code bug fixing",
+            "url": "https://blog.stackademic.com/adding-prompts-to-mcp-server-64d058c4e758",
+            "thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*IPaUKDCqNYKIvwTk_HwjZg.png"
         },
         {
-            "date": "Nov 28, 2023",
-            "title": "Optimizing React for Performance",
-            "description": "A deep dive into React.memo, useMemo, and useCallback. When to use them and when they might hurt performance...",
-            "url": "#"
+            "date": "May 27, 2025",
+            "title": "Why Do I Still Use JetBrains IDEs",
+            "description": "why I continue to prefer JetBrains IDEs in the AI-driven development era, highlighting their powerful built-in features, seamless workflows, and productivity-focused design that go beyond AI integrations alone",
+            "url": "https://blog.stackademic.com/why-do-i-still-use-jetbrains-ides-539f67589abf",
+            "thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*DhbRyUT8dNLaATSAtjUzcg.png"
         },
         {
-            "date": "Oct 15, 2023",
-            "title": "Understanding Vector Databases",
-            "description": "Why vector databases like Pinecone and Milvus are essential for modern AI applications involving semantic search...",
-            "url": "#"
+            "date": "Dec 18, 2025",
+            "title": "When LLM Superpowers Become Weaknesses",
+            "description": "Explores how core LLM capabilities like in-context learning and multilinguality can be exploited as vulnerabilities to perform backdoor attacks, allowing attackers to implant hidden malicious behaviors without degrading normal model performance.",
+            "url": "https://heshanhfernando.medium.com/when-llm-superpowers-become-weaknesses-442e532e4e26",
+            "thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*pUkKdwPHaokYpkRRZKZKMg.png"
         }
     ]
 };
