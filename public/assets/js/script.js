@@ -106,6 +106,25 @@ function populatePortfolio(data) {
         document.getElementById('footer-last-name').textContent = ` ${personal.lastName}`;
         document.getElementById('footer-copyright').textContent = `© ${personal.copyrightYear} ${personal.firstName} ${personal.lastName}. All rights reserved.`;
 
+        // 1.1 Profile Photo
+        if (personal.photo) {
+            const profileContainer = document.getElementById('hero-profile-container');
+            const profileImg = document.getElementById('hero-profile-img');
+
+            if (profileContainer && profileImg) {
+                profileImg.src = personal.photo;
+                profileContainer.classList.remove('hidden');
+            }
+        }
+
+        // 1.2 CV Download
+        if (personal.cv) {
+            const cvBtn = document.getElementById('download-cv');
+            if (cvBtn) {
+                cvBtn.href = personal.cv;
+            }
+        }
+
         // 2. Typewriter Roles
         roles = personal.typewriterRoles;
         setTimeout(type, 1000);
