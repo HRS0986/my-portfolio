@@ -190,15 +190,21 @@ window.portfolioData = {
             "thumbnail": "/public/assets/images/call.jpg"
         },
         {
-            "title": "Vision Analytics",
-            "description": "Real-time computer vision system for retail stores to analyze customer foot traffic and heatmap generation using YOLOv8.",
+            "title": "Spotify Playlist Exporter",
+            "description": "Spex is a web app that allows users to export their Spotify playlists to text files.",
             "tags": [
-                "Python",
-                "OpenCV"
+                "Angular",
+                "Firebase",
+                "Bootstrap"
             ],
-            "github": [],
-            "live": "#",
-            "thumbnail": "/assets/images/vision.jpg"
+            "github": [
+                {
+                    "url": "https://github.com/HRS0986/SPE",
+                    "title": "Code"
+                }
+            ],
+            "live": "https://spex-app.web.app/",
+            "thumbnail": "/public/assets/images/Spex-1.png"
         },
         {
             "title": "E-Shop Pro",
