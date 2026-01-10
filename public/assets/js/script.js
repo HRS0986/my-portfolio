@@ -358,3 +358,231 @@ if (contactForm) {
             });
     });
 }
+
+
+// ==========================================
+// TERMINAL MODE & MODE SELECTION LOGIC
+// ==========================================
+
+const modeSelector = document.getElementById('mode-selector');
+const terminalMode = document.getElementById('terminal-mode');
+const terminalInput = document.getElementById('terminal-input');
+const terminalOutput = document.getElementById('terminal-output');
+
+// Initial State: Disable Scroll when Mode Selector is active
+if (modeSelector) {
+    document.body.style.overflow = 'hidden';
+}
+
+// Make selectMode global for HTML access
+window.selectMode = function (mode) {
+    if (!modeSelector) return;
+
+    if (mode === 'gui') {
+        modeSelector.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+            modeSelector.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }, 500);
+    } else if (mode === 'terminal') {
+        modeSelector.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+            modeSelector.style.display = 'none';
+        }, 500);
+
+        terminalMode.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Keep scroll disabled for body
+        if (terminalInput) terminalInput.focus();
+
+        // Print welcome message
+        print('Welcome to HirushaOS [Version 1.0.0]', 'system');
+        print('Copyright (c) 2026 Hirusha Fernando. All rights reserved.', 'system');
+        print('\nType "help" to see available commands.\n', 'system');
+    }
+};
+
+// Terminal Input Handling
+if (terminalInput) {
+    terminalInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            const command = this.value;
+            this.value = '';
+            print(`visitor@hirusha:~$ ${command}`, 'utils.input');
+            handleCommand(command.trim().toLowerCase());
+
+            // Keep focus
+            this.focus();
+            // Scroll to bottom
+            const container = terminalMode.children[0]; // The div wrapper
+            // Note: Since terminalMode fits screen, we scroll the wrapper or the body? 
+            // The HTML structure has: div#terminal-mode (overflow-y-auto) > div.max-w-4xl (min-h-full)
+            // So we scroll #terminal-mode
+            terminalMode.scrollTo(0, terminalMode.scrollHeight);
+        }
+    });
+
+    // Auto-focus input
+    if (terminalMode) {
+        terminalMode.addEventListener('click', () => {
+            // Don't focus if user is selecting text
+            if (window.getSelection().toString().length === 0) {
+                terminalInput.focus();
+            }
+        });
+    }
+}
+
+function print(text, type = '') {
+    if (!terminalOutput) return;
+
+    const line = document.createElement('div');
+
+    if (type === 'utils.input') {
+        line.className = 'text-[#cccccc] mb-1 opacity-70';
+        line.textContent = text;
+    } else if (type === 'system') {
+        line.className = 'text-green-500 mb-1 font-bold';
+        line.textContent = text;
+    } else if (type === 'error') {
+        line.className = 'text-red-500 mb-1';
+        line.textContent = text;
+    } else if (type === 'html') {
+        line.className = 'text-[#cccccc] mb-1';
+        line.innerHTML = text; // Be careful with XSS if input wasn't sanitized, but here source is internal data
+    } else {
+        line.className = 'text-[#cccccc] mb-1 whitespace-pre-wrap leading-relaxed';
+        line.textContent = text;
+    }
+
+    terminalOutput.appendChild(line);
+    if (terminalMode) terminalMode.scrollTo(0, terminalMode.scrollHeight);
+}
+
+function handleCommand(cmd) {
+    const data = window.portfolioData;
+
+    switch (cmd) {
+        case 'help':
+            print(`
+Available commands:
+  about       - Display information about me
+  skills      - List technical skills
+  experience  - List work experience
+  education   - Show education history
+  projects    - View featured projects
+  blog        - List latest blog posts
+  contact     - Display contact details
+  clear       - Clear the terminal screen
+  gui / exit  - Switch to standard visual mode
+            `);
+            break;
+
+        case 'about':
+            if (data && data.personal) {
+                print(data.personal.about);
+            } else {
+                print('Error: Portfolio data not found.', 'error');
+            }
+            break;
+
+        case 'skills':
+            if (data && data.skills) {
+                print('--- WEB DEVELOPMENT ---', 'system');
+                print(data.skills.web.join(', '));
+                print('\n--- ARTIFICIAL INTELLIGENCE ---', 'system');
+                print(data.skills.ai.join(', '));
+            } else {
+                print('Error: Skills data not found.', 'error');
+            }
+            break;
+
+        case 'experience':
+            if (data && data.experience) {
+                data.experience.forEach(exp => {
+                    print(`\n[${exp.period}] ${exp.role} @ ${exp.company}`, 'system');
+                    print(exp.description);
+                    print(`[Tech]: ${exp.skills.join(', ')}`);
+                });
+            } else {
+                print('Error: Experience data not found.', 'error');
+            }
+            break;
+
+        case 'education':
+            if (data && data.education) {
+                data.education.forEach(edu => {
+                    print(`\n[${edu.period}] ${edu.degree}`, 'system');
+                    print(`${edu.university}`);
+                    print(`Specialization: ${edu.specialization}`);
+                });
+            } else {
+                print('Error: Education data not found.', 'error');
+            }
+            break;
+
+        case 'projects':
+            if (data && data.projects) {
+                data.projects.forEach(p => {
+                    print(`\n> ${p.title}`, 'system');
+                    print(p.description);
+                    print(`[Tech]: ${p.tags.join(', ')}`);
+
+                    let links = [];
+                    if (p.github) p.github.forEach(l => links.push(`${l.title}: ${l.url}`));
+                    if (p.live && p.live !== '#') links.push(`Live: ${p.live}`);
+
+                    if (links.length > 0) print(`[Links]: ${links.join(' | ')}`);
+                });
+            } else {
+                print('Error: Projects data not found.', 'error');
+            }
+            break;
+
+        case 'blog':
+            if (data && data.blogs) {
+                data.blogs.forEach(b => {
+                    print(`\n[${b.date}] ${b.title}`, 'system');
+                    print(b.description);
+                    print(`Read more: ${b.url}`);
+                });
+            } else {
+                print('Error: Blog data not found.', 'error');
+            }
+            break;
+
+        case 'contact':
+            if (data && data.personal) {
+                print(`\nEmail: ${data.personal.email}`);
+                print(`Location: ${data.personal.location}`);
+
+                if (data.socials) {
+                    print('\nConnect explicitly:', 'system');
+                    data.socials.forEach(s => {
+                        print(`  ${s.platform}: ${s.url}`);
+                    });
+                }
+            }
+            break;
+
+        case 'clear':
+            if (terminalOutput) terminalOutput.innerHTML = '';
+            break;
+
+        case 'gui':
+        case 'exit':
+            print('System shutting down...', 'system');
+            print('Switching to Visual Interface...');
+            setTimeout(() => {
+                if (terminalMode) terminalMode.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                if (modeSelector) modeSelector.style.display = 'none';
+            }, 1000);
+            break;
+
+        case '':
+            break;
+
+        default:
+            print(`Command not found: "${cmd}". Type "help" for a list of commands.`, 'error');
+    }
+}
