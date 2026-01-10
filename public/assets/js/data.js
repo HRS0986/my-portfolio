@@ -13,7 +13,7 @@ window.portfolioData = {
             "Tech Blogger"
         ],
         "availability": "I'm currently available for freelance work or part-time opportunities. Have a project in mind? Let's talk.",
-        "photo": "assets/images/me.jpeg",
+        "photo": "assets/images/me.jpg",
         "cv": "assets/Hirusha_Fernando_CV.pdf",
         "copyrightYear": "2026"
     },
