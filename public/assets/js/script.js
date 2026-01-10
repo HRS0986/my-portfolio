@@ -291,31 +291,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Contact Form Simulation
+// Contact Form Handling
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+    // Initialize EmailJS
+    try {
+        emailjs.init("XnWYYthFr7l2h5-aB");
+    } catch (e) {
+        console.error("EmailJS initialization failed:", e);
+    }
+
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
         const originalContent = btn.innerHTML;
 
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // UI Loading State
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         btn.classList.add('opacity-75', 'cursor-not-allowed');
 
-        setTimeout(() => {
-            btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-            btn.classList.remove('bg-primary-600', 'hover:bg-primary-700', 'opacity-75', 'cursor-not-allowed');
-            btn.classList.add('bg-green-600', 'hover:bg-green-700');
+        const params = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_name: "Hirusha Fernando" // Optional, adds context
+        };
 
-            this.reset();
+        emailjs.send('service_0x8rund', 'template_nqip39n', params, "XnWYYthFr7l2h5-aB")
+            .then(() => {
+                // Success State
+                btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+                btn.classList.remove('bg-primary-600', 'hover:bg-primary-700', 'opacity-75', 'cursor-not-allowed');
+                btn.classList.add('bg-green-600', 'hover:bg-green-700');
 
-            setTimeout(() => {
-                btn.innerHTML = originalContent;
-                btn.disabled = false;
-                btn.classList.remove('bg-green-600', 'hover:bg-green-700');
-                btn.classList.add('bg-primary-600', 'hover:bg-primary-700');
-            }, 3000);
-        }, 1500);
+                contactForm.reset();
+
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.disabled = false;
+                    btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    btn.classList.add('bg-primary-600', 'hover:bg-primary-700');
+                }, 3000);
+            })
+            .catch((error) => {
+                console.error('Email sending failed:', error);
+
+                // Error State
+                btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to Send';
+                btn.classList.remove('bg-primary-600', 'hover:bg-primary-700', 'opacity-75', 'cursor-not-allowed');
+                btn.classList.add('bg-red-600', 'hover:bg-red-700');
+
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.disabled = false;
+                    btn.classList.remove('bg-red-600', 'hover:bg-red-700');
+                    btn.classList.add('bg-primary-600', 'hover:bg-primary-700');
+                }, 3000);
+            });
     });
 }
