@@ -209,15 +209,22 @@ window.portfolioData = {
             "thumbnail": "/public/assets/images/Spex-1.png"
         },
         {
-            "title": "E-Shop Pro",
-            "description": "A full-featured e-commerce platform with stripe integration, admin dashboard, and AI-powered product recommendations.",
+            "title": "Blog Writing Assistant",
+            "description": "Agent-based AI assistant for Medium blog writing that enhances existing articles by improving introductions and conclusions, correcting grammar and spelling, generating SEO-friendly titles and descriptions, and applying clean Markdown formatting",
             "tags": [
-                "React",
-                "Firebase"
+                "CrewAI",
+                "Streanmlit",
+                "Python",
+                "OpenAI API"
             ],
-            "github": [],
+            "github": [
+                {
+                    "url": "https://github.com/HRS0986/medium-blog-assistant",
+                    "title": "Code"
+                }
+            ],
             "live": "#",
-            "thumbnail": ""
+            "thumbnail": "/public/assets/images/medium.png"
         }
     ],
     "blogs": [
