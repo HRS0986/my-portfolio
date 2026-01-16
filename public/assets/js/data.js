@@ -156,7 +156,7 @@ window.portfolioData = {
         ],
         "ai": [
             "Python",
-            "scikit-lear",
+            "scikit-learn",
             "PG Vector",
             "LangChain",
             "LangGraph",
