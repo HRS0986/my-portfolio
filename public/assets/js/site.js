@@ -1,3 +1,15 @@
+// Hide loading spinner on window load
+window.onload = function () {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.add('fade-out');
+        // Remove from DOM after transition
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }
+};
+
 // Load portfolio data dynamically
 document.addEventListener('DOMContentLoaded', function () {
     const data = window.portfolioData;
