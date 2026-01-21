@@ -136,9 +136,9 @@
 
 <body class="bg-dark text-white font-sans antialiased flex bg-grid-pattern">
 
-    <!-- BEGIN: Sidebar Navigation (Fixed) -->
+    <!-- BEGIN: Sidebar Navigation (Fixed for Desktop) -->
     <nav
-        class="fixed left-0 top-0 h-full w-16 md:w-20 border-r border-white/10 flex flex-col items-center py-8 z-50 bg-dark/95 backdrop-blur-sm">
+        class="fixed left-0 top-0 h-full w-20 border-r border-white/10 hidden md:flex flex-col items-center py-8 z-50 bg-dark/95 backdrop-blur-sm">
         <!-- Top Brand/Menu -->
         <div class="mb-12 cursor-pointer group">
             <span
@@ -189,18 +189,29 @@
                     class="absolute left-10 bg-neon-green text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Contact</span>
             </a>
         </div>
-
-        <!-- Bottom Social/Icon -->
-        <div class="mt-auto mb-4">
-            <a href="#" class="text-gray-500 hover:text-neon-green transition-colors">
-                <i class="fa-brands fa-github text-xl"></i>
-            </a>
-        </div>
     </nav>
     <!-- END: Sidebar -->
 
+    <!-- BEGIN: Mobile Bottom Navigation -->
+    <nav
+        class="fixed bottom-0 left-0 w-full h-16 bg-dark/95 backdrop-blur-md border-t border-white/10 flex md:hidden items-center justify-around z-50 px-4">
+        <a href="#home" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-house text-xl"></i></a>
+        <a href="#skills" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-shapes text-xl"></i></a>
+        <a href="#projects" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-briefcase text-xl"></i></a>
+        <a href="#resume" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-graduation-cap text-xl"></i></a>
+        <a href="#blog" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-layer-group text-xl"></i></a>
+        <a href="#contact" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-regular fa-envelope text-xl"></i></a>
+    </nav>
+    <!-- END: Mobile Navigation -->
+
     <!-- BEGIN: Main Content Wrapper -->
-    <div class="pl-16 md:pl-20 w-full flex flex-col">
+    <div class="pl-0 md:pl-20 w-full flex flex-col pb-16 md:pb-0">
 
         <!-- ================= SECTION 1: HERO ================= -->
         <section id="home" class="min-h-screen flex items-center justify-center p-6 lg:p-12 relative overflow-hidden">
@@ -216,7 +227,8 @@
                     </div>
                     <div class="flex flex-col gap-4 text-center lg:text-left">
                         <div>
-                            <h2 class="font-serif text-5xl font-bold text-white mb-2 leading-tight">Hirusha<br>Fernando
+                            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2 leading-tight">
+                                Hirusha<br>Fernando
                             </h2>
                             <div class="h-1 w-12 bg-neon-green mt-2 mx-auto lg:mx-0"></div>
                         </div>
@@ -241,24 +253,24 @@
                         </span>
                     </div>
                     <h1
-                        class="font-serif font-bold text-white text-5xl lg:text-7xl xl:text-[5.5rem] leading-[1.1] mb-6">
+                        class="font-serif font-bold text-white text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] leading-[1.1] mb-6">
                         Hey, It’s Hirusha,
                     </h1>
                     <h2
-                        class="font-mono text-neon-green text-3xl lg:text-5xl leading-snug mb-10 font-normal min-h-[3rem] lg:min-h-[4rem]">
+                        class="font-mono text-neon-green text-xl sm:text-3xl lg:text-5xl leading-snug mb-10 font-normal min-h-[3rem] lg:min-h-[4rem]">
                         Web Application <br class="hidden lg:block"> Developer
                     </h2>
                     <p class="text-textGrey text-lg max-w-2xl mb-10 leading-relaxed font-light">
                         A passionate developer and final-year AI undergraduate actively seeking a career opportunity in
                         Artificial Intelligence. Building the web of tomorrow, one line of code at a time.
                     </p>
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
                         <a href="#projects"
-                            class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-green transition-colors duration-300">
+                            class="inline-flex items-center gap-3 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-green transition-colors duration-300 text-sm sm:text-base">
                             <i class="fa-solid fa-arrow-down"></i> View My Work
                         </a>
                         <a id="cv-download-btn" href="#" download
-                            class="inline-flex items-center gap-3 bg-transparent border-2 border-neon-green text-neon-green px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-green hover:text-black transition-colors duration-300">
+                            class="inline-flex items-center gap-3 bg-transparent border-2 border-neon-green text-neon-green px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-green hover:text-black transition-colors duration-300 text-sm sm:text-base">
                             <i class="fa-solid fa-download"></i> Download CV
                         </a>
                     </div>
@@ -269,8 +281,8 @@
         <!-- ================= SECTION: SKILLS ================= -->
         <section id="skills" class="min-h-screen flex flex-col justify-center p-8 lg:p-20 relative">
             <div class="max-w-7xl w-full mx-auto">
-                <header class="mb-16">
-                    <h1 class="text-5xl md:text-6xl font-serif text-white tracking-tight font-extrabold">
+                <header class="mb-12 md:mb-16">
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-serif text-white tracking-tight font-extrabold">
                         Technical <span class="text-neon-green">Skills</span>
                     </h1>
                 </header>
@@ -314,7 +326,7 @@
                         <article
                             class="bg-dark-lighter border border-white/10 p-8 rounded-sm hover:border-neon-green/50 transition-all group flex flex-col h-full hover:-translate-y-2 duration-300">
                             <h2
-                                class="font-serif text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+                                class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
                                 AI Chat App</h2>
                             <p class="text-xs text-neon-green font-mono mb-4">[React, Node.js, GraphQL]</p>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -335,7 +347,7 @@
                         <article
                             class="bg-dark-lighter border border-white/10 p-8 rounded-sm hover:border-neon-green/50 transition-all group flex flex-col h-full hover:-translate-y-2 duration-300">
                             <h2
-                                class="font-serif text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+                                class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
                                 E-commerce</h2>
                             <p class="text-xs text-neon-green font-mono mb-4">[Vue, Django, PostgreSQL]</p>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -356,7 +368,7 @@
                         <article
                             class="bg-dark-lighter border border-white/10 p-8 rounded-sm hover:border-neon-green/50 transition-all group flex flex-col h-full hover:-translate-y-2 duration-300">
                             <h2
-                                class="font-serif text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+                                class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
                                 Task Manager</h2>
                             <p class="text-xs text-neon-green font-mono mb-4">[Svelte, Firebase]</p>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -405,9 +417,10 @@
 
                     <!-- Experience Column -->
                     <div class="relative">
-                        <header class="mb-12">
-                            <h2 class="font-serif font-bold text-white tracking-wide text-5xl md:text-6xl"><span
-                                    class="text-neon-green">Exp</span>erience</h2>
+                        <header class="mb-8 md:mb-12">
+                            <h2 class="font-serif font-bold text-white tracking-wide text-2xl sm:text-4xl md:text-6xl">
+                                <span class="text-neon-green">Exp</span>erience
+                            </h2>
                         </header>
                         <div class="flex flex-col space-y-12">
 
@@ -464,9 +477,10 @@
 
                     <!-- Education Column -->
                     <div class="relative">
-                        <header class="mb-12">
-                            <h2 class="font-serif font-bold text-white tracking-wide text-5xl md:text-6xl"><span
-                                    class="text-neon-green">Edu</span>cation</h2>
+                        <header class="mb-8 md:mb-12">
+                            <h2 class="font-serif font-bold text-white tracking-wide text-2xl sm:text-4xl md:text-6xl">
+                                <span class="text-neon-green">Edu</span>cation
+                            </h2>
                         </header>
                         <div class="flex flex-col space-y-12">
 
@@ -511,8 +525,8 @@
         <!-- ================= SECTION 4: INSIGHTS (BLOG) ================= -->
         <section id="blog" class="min-h-screen flex flex-col justify-center p-8 lg:p-20">
             <div class="max-w-6xl w-full mx-auto">
-                <header class="mb-16">
-                    <h1 class="text-5xl md:text-6xl font-serif text-white tracking-tight font-extrabold">
+                <header class="mb-12 md:mb-16">
+                    <h1 class="text-2xl sm:text-4xl md:text-6xl font-serif text-white tracking-tight font-extrabold">
                         Latest <span class="text-neon-green">Blogs</span>
                     </h1>
                 </header>
@@ -526,7 +540,7 @@
                                 <span
                                     class="font-mono text-sm tracking-wider block text-neon-green opacity-80">05.08.2024</span>
                                 <h2
-                                    class="text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
+                                    class="text-xl sm:text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
                                     Exploring the Future of AI in Web Development
                                 </h2>
                                 <p class="text-lg leading-relaxed font-light text-gray-400">
@@ -549,7 +563,7 @@
                                 <span
                                     class="font-mono text-sm tracking-wider block text-neon-green opacity-80">22.07.2024</span>
                                 <h2
-                                    class="text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
+                                    class="text-xl sm:text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
                                     Mastering Minimalist Brutalism
                                 </h2>
                                 <p class="text-lg leading-relaxed font-light text-gray-400">
@@ -572,7 +586,7 @@
                                 <span
                                     class="font-mono text-sm tracking-wider block text-neon-green opacity-80">10.07.2024</span>
                                 <h2
-                                    class="text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
+                                    class="text-xl sm:text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
                                     Optimizing React Performance
                                 </h2>
                                 <p class="text-lg leading-relaxed font-light text-gray-400">
@@ -594,9 +608,10 @@
         <!-- ================= SECTION 5: CONTACT (LAST SECTION) ================= -->
         <section id="contact" class="min-h-screen flex flex-col justify-center relative p-8 lg:p-20">
             <div class="max-w-6xl w-full mx-auto flex flex-col justify-center h-full">
-                <header class="mb-16">
-                    <h1 class="text-6xl text-white font-serif font-bold tracking-tight">Let's <span
-                            class="text-neon-green">Connect</span></h1>
+                <header class="mb-12 md:mb-16">
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl text-white font-serif font-bold tracking-tight">Let's
+                        <span class="text-neon-green">Connect</span>
+                    </h1>
                 </header>
 
                 <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
@@ -636,7 +651,7 @@
                             <div>
                                 <h2 class="text-2xl text-gray-400 mb-2 font-mono">Email Me</h2>
                                 <a href="mailto:heshanhfernando@gmail.com"
-                                    class="text-3xl lg:text-4xl text-white font-serif hover:text-neon-green transition-colors leading-tight break-all">
+                                    class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-serif hover:text-neon-green transition-colors leading-tight break-all">
                                     heshanhfernando@gmail.com
                                 </a>
                             </div>
