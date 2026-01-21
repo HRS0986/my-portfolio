@@ -287,7 +287,8 @@
                     </div>
                     <div class="flex flex-col gap-4 text-center lg:text-left">
                         <div>
-                            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2 leading-tight">
+                            <h2 id="hero-name"
+                                class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2 leading-tight">
                                 Hirusha<br>Fernando
                             </h2>
                             <div class="h-1 w-12 bg-neon-green mt-2 mx-auto lg:mx-0"></div>
@@ -312,7 +313,7 @@
                             <i class="fa-solid fa-code"></i> Introduce
                         </span>
                     </div>
-                    <h1
+                    <h1 id="hero-title"
                         class="font-serif font-bold text-white text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] leading-[1.1] mb-6">
                         Hey, It’s Hirusha,
                     </h1>
@@ -379,7 +380,7 @@
 
                 <!-- Scrolling Grid Section -->
                 <div class="flex-1 p-6 md:p-12 lg:p-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                         <!-- Card 1 -->
                         <article
@@ -590,7 +591,7 @@
                     </h1>
                 </header>
 
-                <div class="flex flex-col gap-10">
+                <div id="blog-container" class="flex flex-col gap-10">
 
                     <!-- Post 1 -->
                     <article class="group pb-10 border-b border-white/10">
@@ -732,15 +733,10 @@
                     <h2 class="text-2xl font-serif font-bold text-white">Thanks for stopping by!</h2>
                 </div>
                 <div class="flex flex-col items-center md:items-end gap-4">
-                    <div class="flex gap-6 text-2xl text-gray-400">
-                        <a href="#" class="hover:text-neon-green transition-transform hover:-translate-y-1"><i
-                                class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="hover:text-neon-green transition-transform hover:-translate-y-1"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-neon-green transition-transform hover:-translate-y-1"><i
-                                class="fa-brands fa-twitter"></i></a>
+                    <div id="footer-socials" class="flex gap-6 text-2xl text-gray-400">
+                        <!-- Footer socials will be populated dynamically -->
                     </div>
-                    <p class="text-gray-600 text-sm font-mono">
+                    <p id="footer-copyright" class="text-gray-600 text-sm font-mono">
                         © 2023 Hirusha. All Rights Reserved
                     </p>
                 </div>
