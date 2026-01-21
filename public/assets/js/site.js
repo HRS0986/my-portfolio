@@ -1,48 +1,64 @@
-// Hide loading spinner on window load
-window.onload = function () {
-    const loader = document.getElementById('loader');
-    if (loader) {
-        loader.classList.add('fade-out');
-        // Remove from DOM after transition
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 500);
+// Main initialization function
+let initRetries = 0;
+const MAX_RETRIES = 50; // 5 seconds total
+
+function init() {
+    try {
+        const data = window.portfolioData;
+
+        if (!data) {
+            initRetries++;
+            if (initRetries < MAX_RETRIES) {
+                console.warn(`Portfolio data not found during init (attempt ${initRetries})! Retrying in 100ms...`);
+                setTimeout(init, 100);
+            } else {
+                console.error('Failed to load portfolio data after maximum retries.');
+                hideLoader();
+            }
+            return;
+        }
+
+        console.log('Portfolio data loaded successfully. Updating sections...');
+
+        // Update Hero Section
+        updateHeroSection(data);
+
+        // Update Skills Section
+        updateSkillsSection(data);
+
+        // Update Projects Section
+        updateProjectsSection(data);
+
+        // Update Resume Section
+        updateResumeSection(data);
+
+        // Update Blog Section
+        updateBlogSection(data);
+
+        // Update Contact Section
+        updateContactSection(data);
+
+        // Update Footer
+        updateFooter(data);
+
+        // Update Sidebar
+        updateSidebar(data);
+
+        console.log('Portfolio sections updated.');
+    } catch (error) {
+        console.error('Error during portfolio initialization:', error);
+        // Ensure loader is hidden even if there's a runtime error
+        hideLoader();
     }
-};
+}
 
-// Load portfolio data dynamically
-document.addEventListener('DOMContentLoaded', function () {
-    const data = window.portfolioData;
-
-    if (!data) {
-        console.error('Portfolio data not found!');
-        return;
-    }
-
-    // Update Hero Section
-    updateHeroSection(data);
-
-    // Update Skills Section
-    updateSkillsSection(data);
-
-    // Update Projects Section
-    updateProjectsSection(data);
-
-    // Update Resume Section
-    updateResumeSection(data);
-
-    // Update Blog Section
-    updateBlogSection(data);
-
-    // Update Contact Section
-    updateContactSection(data);
-
-    // Update Footer
-    updateFooter(data);
-
-    // Update Sidebar
-    updateSidebar(data);
-});
+// Ensure init runs after DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    // Small delay to ensure any subsequent scripts like data.js have parsed
+    setTimeout(init, 10);
+}
 
 function updateHeroSection(data) {
     const personal = data.personal;
@@ -96,7 +112,7 @@ function updateHeroSection(data) {
     }
 
     // Update hero role with typewriter animation
-    const heroRole = document.querySelector('.font-mono.text-neon-green.text-3xl');
+    const heroRole = document.getElementById('typewriter');
     if (heroRole && data.personal.typewriterRoles && data.personal.typewriterRoles.length > 0) {
         startTypewriter(heroRole, data.personal.typewriterRoles);
     }
@@ -368,6 +384,9 @@ function updateSidebar(data) {
 
 // Typewriter animation function
 function startTypewriter(element, roles) {
+    if (element.dataset.typewriterStarted) return;
+    element.dataset.typewriterStarted = 'true';
+
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;

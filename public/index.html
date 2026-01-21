@@ -132,6 +132,26 @@
             outline: none;
         }
 
+        /* Typewriter Cursor */
+        #typewriter::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+            margin-left: 2px;
+            color: #00ff9d;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
         /* Loading Spinner */
         #loader {
             position: fixed;
@@ -296,9 +316,8 @@
                         class="font-serif font-bold text-white text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] leading-[1.1] mb-6">
                         Hey, It’s Hirusha,
                     </h1>
-                    <h2
+                    <h2 id="typewriter"
                         class="font-mono text-neon-green text-xl sm:text-3xl lg:text-5xl leading-snug mb-10 font-normal min-h-[3rem] lg:min-h-[4rem]">
-                        Web Application <br class="hidden lg:block"> Developer
                     </h2>
                     <p class="text-textGrey text-lg max-w-2xl mb-10 leading-relaxed font-light">
                         A passionate developer and final-year AI undergraduate actively seeking a career opportunity in
@@ -730,6 +749,26 @@
 
     </div>
     <!-- END: Main Content Wrapper -->
+
+    <script>
+        // Function to hide the loading spinner
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader && !loader.classList.contains('fade-out')) {
+                loader.classList.add('fade-out');
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }
+        }
+
+        // Hide loading spinner on window load
+        window.addEventListener('load', hideLoader);
+
+        // Fallback: hide loader after 5 seconds even if resources haven't finished loading
+        setTimeout(hideLoader, 5000);
+    </script>
 
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
