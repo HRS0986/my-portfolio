@@ -63,13 +63,6 @@ if (document.readyState === 'loading') {
 function updateHeroSection(data) {
     const personal = data.personal;
 
-    // Update profile image
-    const profileImg = document.querySelector('.profile-clip img');
-    if (profileImg && personal.photo) {
-        profileImg.src = personal.photo;
-        profileImg.alt = `${personal.firstName} ${personal.lastName}`;
-    }
-
     // Update name
     const nameElement = document.querySelector('.font-serif.text-5xl.font-bold.text-white.mb-2');
     if (nameElement) {
