@@ -223,25 +223,7 @@ window.portfolioData = {
             ],
             "live": "https://github.com/HRS0986/ZoteroPDF/releases",
             "thumbnail": "/public/assets/images/zoteropdf.png"
-        },
-        {
-            "title": "Blog Writing Assistant",
-            "description": "Agent-based AI assistant for Medium blog writing that enhances existing articles by improving introductions and conclusions, correcting grammar and spelling, generating SEO-friendly titles and descriptions, and applying clean Markdown formatting",
-            "tags": [
-                "CrewAI",
-                "Streanmlit",
-                "Python",
-                "OpenAI API"
-            ],
-            "github": [
-                {
-                    "url": "https://github.com/HRS0986/medium-blog-assistant",
-                    "title": "Code"
-                }
-            ],
-            "live": "#",
-            "thumbnail": "/public/assets/images/medium.png"
-        },        
+        }
     ],
     "blogs": [
         {
