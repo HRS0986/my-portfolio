@@ -3,477 +3,770 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirusha Fernando</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta http-equiv="content-language" content="en">
+    <meta name="description"
+        content="Hirusha Fernando, Software & AI Developer, Final Year AI Undergraduate at UOM, Freelancer">
+    <meta content="" name="Hirusha Fernando, Software & AI Developer, Final Year AI Undergraduate at UOM, Freelancer">
+    <meta name="author" content="Hirusha Fernando">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hirusha Fernando" />
+    <meta property="og:description"
+        content="Hirusha Fernando, Software & AI Developer, Final Year AI Undergraduate at UOM, Freelancer" />
+    <meta property="og:url" content="https://hirushafernando.com/" />
+    <meta property="og:section" content="Software Development | AI Development" />
+    <meta property="og:image" content="/assets/images/me.jpg" />
+
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        gray: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617',
-                        },
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9', // Sky blue
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            950: '#082f49',
-                        },
-                        accent: {
-                            500: '#8b5cf6', // Violet for AI feel
-                        }
+                        dark: '#0a0a0a',
+                        'dark-lighter': '#111111',
+                        'neon-green': '#00ff9d',
+                        'grid-line': 'rgba(255, 255, 255, 0.05)',
+                        textGrey: '#9ca3af',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        mono: ['"Fira Code"', '"Roboto Mono"', 'monospace'],
+                        sans: ['"Inter"', 'sans-serif'],
                     },
                     animation: {
-                        'blob': 'blob 7s infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
+                        'spin-slow': 'spin 12s linear infinite',
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Custom Styles -->
+    <style>
+        /* Global Reset & Base */
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Grid Background Pattern */
+        .bg-grid-pattern {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-attachment: fixed;
+            /* Parallax-like effect */
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4ade80;
+        }
+
+        /* Profile Clip Path */
+        .profile-clip {
+            clip-path: polygon(20% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 20%);
+        }
+
+        /* Vertical Text */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* Timeline Line */
+        .timeline-line {
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: -40px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item:last-child .timeline-line {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
+        /* Input Glow */
+        .input-glow:focus,
+        .input-glow.active {
+            border-color: #00ff9d;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.2), inset 0 0 5px rgba(0, 255, 157, 0.1);
+            outline: none;
+        }
+
+        /* Typewriter Cursor */
+        #typewriter::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+            margin-left: 2px;
+            color: #00ff9d;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Loading Spinner */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        #loader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(0, 255, 157, 0.1);
+            border-top-color: #00ff9d;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
-<body
-    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased font-sans">
+<body class="bg-dark text-white font-sans antialiased flex bg-grid-pattern">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#"
-                        class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500">
-                        <span id="nav-first-name"></span> <span id="nav-last-name"
-                            class="text-gray-700 dark:text-gray-200"></span>
-                    </a>
-                </div>
+    <!-- Loading Spinner -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-sm font-medium">About</a>
-                    <a href="#skills"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-sm font-medium">Skills</a>
-                    <a href="#experience"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-sm font-medium">Experience</a>
-                    <a href="#education"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-sm font-medium">Education</a>
-                    <a href="#projects"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-sm font-medium">Projects</a>
-                    <a href="#blog"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-sm font-medium">Blog</a>
-                    <a href="#contact"
-                        class="px-4 py-2 rounded-full bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm font-medium shadow-lg shadow-primary-500/30">Let's
-                        Connect</a>
-
-                    <!-- Theme Toggle -->
-                    <button id="theme-toggle"
-                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none"
-                        aria-label="Toggle Dark Mode">
-                        <i class="fas fa-moon text-gray-600 dark:hidden"></i>
-                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center gap-4">
-                    <button id="theme-toggle-mobile"
-                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none">
-                        <i class="fas fa-moon text-gray-600 dark:hidden"></i>
-                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
-                    </button>
-                    <button id="mobile-menu-btn"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary-500 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+    <!-- BEGIN: Sidebar Navigation (Fixed for Desktop) -->
+    <nav
+        class="fixed left-0 top-0 h-full w-20 border-r border-white/10 hidden md:flex flex-col items-center py-8 z-50 bg-dark/95 backdrop-blur-sm">
+        <!-- Top Brand/Menu -->
+        <div class="mb-12 cursor-pointer group">
+            <span
+                class="font-serif font-bold text-2xl text-neon-green group-hover:text-white transition-colors">M</span>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-200 dark:border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
-                <a href="#skills"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-100 dark:hover:bg-gray-800">Skills</a>
-                <a href="#experience"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-100 dark:hover:bg-gray-800">Experience</a>
-                <a href="#projects"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a>
-                <a href="#contact"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-primary-500 font-bold">Let's
-                    Connect</a>
-            </div>
+        <!-- Navigation Icons -->
+        <div class="flex flex-col gap-10 flex-1 justify-center">
+            <a href="#home" aria-label="Home"
+                class="text-xl text-gray-500 hover:text-neon-green transition-colors relative group">
+                <i class="fa-solid fa-house"></i>
+                <span
+                    class="absolute left-10 bg-neon-green text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Home</span>
+            </a>
+
+            <a href="#skills" aria-label="Skills"
+                class="text-xl text-gray-500 hover:text-neon-green transition-colors relative group">
+                <i class="fa-solid fa-shapes"></i>
+                <span
+                    class="absolute left-10 bg-neon-green text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Skills</span>
+            </a>
+
+            <a href="#projects" aria-label="Portfolio"
+                class="text-xl text-gray-500 hover:text-neon-green transition-colors relative group">
+                <i class="fa-solid fa-briefcase"></i>
+                <span
+                    class="absolute left-10 bg-neon-green text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Projects</span>
+            </a>
+
+            <a href="#resume" aria-label="Resume"
+                class="text-xl text-gray-500 hover:text-neon-green transition-colors relative group">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span
+                    class="absolute left-10 bg-neon-green text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Resume</span>
+            </a>
+
+            <a href="#blog" aria-label="Blog"
+                class="text-xl text-gray-500 hover:text-neon-green transition-colors relative group">
+                <i class="fa-solid fa-layer-group"></i>
+                <span
+                    class="absolute left-10 bg-neon-green text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Blog</span>
+            </a>
+
+            <a href="#contact" aria-label="Contact"
+                class="text-xl text-gray-500 hover:text-neon-green transition-colors relative group">
+                <i class="fa-regular fa-envelope"></i>
+                <span
+                    class="absolute left-10 bg-neon-green text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Contact</span>
+            </a>
         </div>
     </nav>
+    <!-- END: Sidebar -->
 
-    <!-- Hero Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
-        <!-- Background Elements -->
-        <div
-            class="absolute top-0 -left-4 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob dark:opacity-10">
-        </div>
-        <div
-            class="absolute top-0 -right-4 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 dark:opacity-10">
-        </div>
-        <div
-            class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000 dark:opacity-10">
-        </div>
+    <!-- BEGIN: Mobile Bottom Navigation -->
+    <nav
+        class="fixed bottom-0 left-0 w-full h-16 bg-dark/95 backdrop-blur-md border-t border-white/10 flex md:hidden items-center justify-around z-50 px-4">
+        <a href="#home" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-house text-xl"></i></a>
+        <a href="#skills" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-shapes text-xl"></i></a>
+        <a href="#projects" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-briefcase text-xl"></i></a>
+        <a href="#resume" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-graduation-cap text-xl"></i></a>
+        <a href="#blog" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-solid fa-layer-group text-xl"></i></a>
+        <a href="#contact" class="text-gray-500 hover:text-neon-green transition-colors"><i
+                class="fa-regular fa-envelope text-xl"></i></a>
+    </nav>
+    <!-- END: Mobile Navigation -->
 
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
-                <div class="mb-6 hidden" id="hero-profile-container">
-                    <img id="hero-profile-img" src="" alt="Profile Photo"
-                        class="w-32 h-32 rounded-full border-4 border-white dark:border-gray-800 shadow-lg object-cover">
-                </div>
-                <div
-                    class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-primary-600 uppercase bg-primary-100 rounded-full dark:bg-primary-900/30 dark:text-primary-400">
-                    Portfolio
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
-                    Hey, It's
-                    <span id="hero-first-name"
-                        class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500">
-                    </span><br>
-                    <span id="typewriter"
-                        class="text-3xl md:text-5xl text-gray-600 dark:text-gray-400 mt-2 block min-h-[1.5em]"></span>
-                    <span id="hero-sr-tagline" class="sr-only"></span>
-                </h1>
-                <p id="hero-about" class="text-lg text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact"
-                        class="px-6 py-3 rounded-lg bg-primary-500 text-white font-medium hover:bg-primary-600 transition-all shadow-lg shadow-primary-500/30 transform hover:-translate-y-1">
-                        Hire Me
-                    </a>
-                    <a href="#projects"
-                        class="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
-                        View Projects
-                    </a>
-                    <a id="download-cv" href="#" target="_blank"
-                        class="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-all flex items-center gap-2">
-                        <span>Download CV</span>
-                        <i class="fas fa-download"></i>
-                    </a>
-                </div>
+    <!-- BEGIN: Main Content Wrapper -->
+    <div class="pl-0 md:pl-20 w-full flex flex-col pb-16 md:pb-0">
 
-                <!-- Social Icons -->
-                <div id="hero-socials" class="flex items-center gap-6 pt-4">
-                </div>
-            </div>
-
-            <!-- Hero Image / Visual -->
-            <div class="relative opacity-0 animate-fade-in-up hidden md:block" style="animation-delay: 0.4s;">
-                <div class="relative w-full aspect-square max-w-md mx-auto">
-                    <!-- Decorative circle -->
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-primary-500 to-accent-500 rounded-full opacity-20 blur-2xl">
-                    </div>
-                    <!-- Code Editor Mockup -->
-                    <div
-                        class="absolute inset-4 bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
-                        <div
-                            class="bg-gray-100 dark:bg-gray-900 px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex gap-2">
-                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                        </div>
-                        <div class="p-6 font-mono text-sm">
-                            <div class="text-gray-800 dark:text-gray-300">
-                                <span class="text-pink-500">class</span> <span
-                                    class="text-yellow-600 dark:text-yellow-400">Developer</span> {<br>
-                                &nbsp;&nbsp;<span class="text-purple-500">constructor</span>() {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">this</span>.name = <span
-                                    id="mockup-name" class="text-green-500"></span>;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">this</span>.role = <span
-                                    class="text-green-500">'Developer'</span>;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">this</span>.status = <span
-                                    class="text-green-500">'Open to work'</span>;<br>
-                                &nbsp;&nbsp;}<br><br>
-                                &nbsp;&nbsp;<span class="text-purple-500">innovate</span>() {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-500">return</span> <span
-                                    class="text-green-500">'Solved.'</span>;<br>
-                                &nbsp;&nbsp;}<br>
-                                }
-                            </div>
+        <!-- ================= SECTION 1: HERO ================= -->
+        <section id="home" class="min-h-screen flex items-center justify-center p-6 lg:p-12 relative overflow-hidden">
+            <div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Profile -->
+                <div class="lg:col-span-4 flex flex-col gap-8 order-2 lg:order-1">
+                    <div class="w-full relative group max-w-sm mx-auto lg:mx-0">
+                        <div class="w-full aspect-[4/5] bg-gray-800 profile-clip overflow-hidden relative shadow-2xl">
+                            <img src="/assets/images/me.jpg" alt="Hirusha Fernando"
+                                class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" />
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800/50 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Work Experience</h2>
-                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div id="experience-list" class="relative ml-4 md:ml-0 space-y-12">
-                <div class="absolute top-0 bottom-0 left-0 md:left-1/3 w-px bg-gray-200 dark:bg-gray-700"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
-                <i class="fas fa-graduation-cap text-primary-500"></i> Education
-            </h2>
-            <div id="education-list" class="space-y-6">
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white dark:bg-gray-800/50 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Technical Arsenal</h2>
-                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
-                <p class="mt-4 text-gray-600 dark:text-gray-400">My proficiency across the full stack and AI ecosystem.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Web Development Skills -->
-                <div
-                    class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                        <i class="fas fa-code text-primary-500"></i> Web Development
-                    </h3>
-                    <div id="web-skills-list" class="flex flex-wrap gap-3">
-                    </div>
-                </div>
-
-                <!-- AI Skills -->
-                <div
-                    class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                        <i class="fas fa-brain text-accent-500"></i> Artificial Intelligence
-                    </h3>
-                    <div id="ai-skills-list" class="flex flex-wrap gap-3">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white dark:bg-gray-900 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
-                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-20 bg-white dark:bg-gray-900 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Latest Writings</h2>
-                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gray-50 dark:bg-gray-800/50 transition-colors">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                <!-- Contact Info -->
-                <div
-                    class="md:w-5/12 bg-gradient-to-br from-primary-600 to-primary-800 p-10 text-white flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
-                        <p id="contact-availability" class="text-blue-100 mb-8 leading-relaxed">
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4">
-                                <i class="fas fa-envelope mt-1 text-blue-200"></i>
-                                <span id="contact-email"></span>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <i class="fas fa-map-marker-alt mt-1 text-blue-200"></i>
-                                <span id="contact-location"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-12">
-                        <p class="text-blue-200 text-sm mb-4">Reach out to me</p>
-                        <div id="contact-socials" class="flex gap-4">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="md:w-7/12 p-10">
-                    <form id="contactForm" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
-                                <input type="text" id="name"
-                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                                    placeholder="John Doe" required>
-                            </div>
-                            <div>
-                                <label for="email"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-                                <input type="email" id="email"
-                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                                    placeholder="john@example.com" required>
-                            </div>
-                        </div>
+                    <div class="flex flex-col gap-4 text-center lg:text-left">
                         <div>
-                            <label for="subject"
-                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
-                            <input type="text" id="subject"
-                                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                                placeholder="Project Inquiry" required>
+                            <h2 id="hero-name"
+                                class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2 leading-tight">
+                                Hirusha<br>Fernando
+                            </h2>
+                            <div class="h-1 w-12 bg-neon-green mt-2 mx-auto lg:mx-0"></div>
                         </div>
-                        <div>
-                            <label for="message"
-                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-                            <textarea id="message" rows="4"
-                                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none"
-                                placeholder="Tell me about your project..." required></textarea>
+                        <!-- Social Links -->
+                        <div id="hero-social-links" class="flex gap-4 justify-center lg:justify-start">
+                            <!-- Social links will be populated dynamically -->
                         </div>
-                        <button type="submit" id="submitBtn"
-                            class="w-full py-3 px-6 rounded-lg bg-primary-600 text-white font-bold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/30 flex items-center justify-center gap-2">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                        <div class="text-textGrey font-sans text-sm space-y-1">
+                            <p class="hover:text-neon-green transition-colors cursor-pointer">heshanfernando@gmail.com
+                            </p>
+                            <p>Based in Kurunegala, LK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Text -->
+                <div class="lg:col-span-8 flex flex-col justify-center order-1 lg:order-2">
+                    <div class="mb-6">
+                        <span
+                            class="inline-flex items-center gap-2 bg-neon-green text-black px-4 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase">
+                            <i class="fa-solid fa-code"></i> Introduce
+                        </span>
+                    </div>
+                    <h1 id="hero-title"
+                        class="font-serif font-bold text-white text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] leading-[1.1] mb-6">
+                        Hey, It’s Hirusha,
+                    </h1>
+                    <h2 id="typewriter"
+                        class="font-mono text-neon-green text-xl sm:text-3xl lg:text-5xl leading-snug mb-10 font-normal min-h-[3rem] lg:min-h-[4rem]">
+                    </h2>
+                    <p class="text-textGrey text-lg max-w-2xl mb-10 leading-relaxed font-light">
+                        A passionate developer and final-year AI undergraduate actively seeking a career opportunity in
+                        Artificial Intelligence. Building the web of tomorrow, one line of code at a time.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#projects"
+                            class="inline-flex items-center gap-3 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-green transition-colors duration-300 text-sm sm:text-base">
+                            <i class="fa-solid fa-arrow-down"></i> View My Work
+                        </a>
+                        <a id="cv-download-btn" href="#" download
+                            class="inline-flex items-center gap-3 bg-transparent border-2 border-neon-green text-neon-green px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-green hover:text-black transition-colors duration-300 text-sm sm:text-base">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-12 transition-colors">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <span
-                    class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500">
-                    <span id="footer-first-name"></span><span id="footer-last-name"
-                        class="text-gray-700 dark:text-gray-200"></span>
-                </span>
-                <p id="footer-copyright" class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                </p>
+        <!-- ================= SECTION: SKILLS ================= -->
+        <section id="skills" class="min-h-screen flex flex-col justify-center p-8 lg:p-20 relative">
+            <div class="max-w-7xl w-full mx-auto">
+                <header class="mb-12 md:mb-16">
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-serif text-white tracking-tight font-extrabold">
+                        Technical <span class="text-neon-green">Skills</span>
+                    </h1>
+                </header>
+
+                <!-- Skills Categories Container -->
+                <div id="skills-categories-container">
+                    <!-- Categories will be populated dynamically -->
+                </div>
+
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Mode Selector Overlay -->
-    <div id="mode-selector"
-        class="fixed inset-0 z-[60] glass flex items-center justify-center transition-all duration-500">
-        <div class="max-w-4xl w-full mx-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Visual Mode Option -->
-            <button onclick="selectMode('gui')"
-                class="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700 text-left overflow-hidden">
+        <!-- ================= SECTION 2: PROJECTS ================= -->
+        <section id="projects" class="min-h-screen relative">
+            <div class="flex flex-col lg:flex-row min-h-screen">
+                <!-- Sticky Header/Title Section -->
                 <div
-                    class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5 group-hover:opacity-100 opacity-0 transition-opacity">
-                </div>
-                <div class="relative z-10">
-                    <div
-                        class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-6 text-3xl text-primary-600 dark:text-primary-400">
-                        <i class="fas fa-desktop"></i>
+                    class="lg:w-[35%] xl:w-[30%] p-8 lg:p-12 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center border-r border-white/5 z-10">
+                    <div class="hidden lg:flex flex-row gap-4 h-full max-h-[500px]">
+                        <h1
+                            class="font-serif text-6xl xl:text-8xl font-black leading-none vertical-text uppercase tracking-widest text-white">
+                            <span class="text-neon-green">Proj</span>ects
+                        </h1>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Visual Mode</h3>
-                    <p class="text-gray-600 dark:text-gray-400">The classic portfolio experience. Modern, interactive,
-                        and visually rich.</p>
-                </div>
-            </button>
-
-            <!-- Terminal Mode Option -->
-            <button onclick="selectMode('terminal')"
-                class="group relative bg-black p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-gray-800 text-left overflow-hidden">
-                <div class="absolute inset-0 bg-green-900/10 group-hover:opacity-100 opacity-0 transition-opacity">
-                </div>
-                <div class="relative z-10">
-                    <div
-                        class="w-16 h-16 rounded-full bg-green-900/30 flex items-center justify-center mb-6 text-3xl text-green-500 font-mono">
-                        <i class="fas fa-terminal"></i>
+                    <!-- Mobile Title -->
+                    <div class="lg:hidden mb-8">
+                        <h2 class="text-4xl font-serif font-bold text-neon-green">Selected Works</h2>
+                        <div class="h-1 w-20 bg-white mt-2"></div>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-2 font-mono">> Terminal Mode</h3>
-                    <p class="text-gray-400 font-mono text-sm leading-relaxed">System.init()<br>Command line interface
-                        for advanced users.</p>
                 </div>
-            </button>
-        </div>
-    </div>
 
-    <!-- Terminal Interface -->
-    <div id="terminal-mode"
-        class="fixed inset-0 z-[55] bg-[#0c0c0c] text-[#cccccc] font-mono p-4 md:p-8 hidden overflow-y-auto selection:bg-[#cccccc] selection:text-[#0c0c0c]">
-        <div class="max-w-4xl mx-auto min-h-full flex flex-col">
-            <!-- Terminal Output -->
-            <div id="terminal-output" class="whitespace-pre-wrap mb-4"></div>
+                <!-- Scrolling Grid Section -->
+                <div class="flex-1 p-6 md:p-12 lg:p-16">
+                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <!-- Terminal Input Line -->
-            <div class="flex items-center gap-2 text-[#cccccc]">
-                <span class="text-[#00ff00]">visitor@hirusha:~$</span>
-                <input type="text" id="terminal-input"
-                    class="bg-transparent border-none outline-none flex-1 text-[#cccccc]" autocomplete="off"
-                    spellcheck="false" autofocus>
+                        <!-- Card 1 -->
+                        <article
+                            class="bg-dark-lighter border border-white/10 p-8 rounded-sm hover:border-neon-green/50 transition-all group flex flex-col h-full hover:-translate-y-2 duration-300">
+                            <h2
+                                class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+                                AI Chat App</h2>
+                            <p class="text-xs text-neon-green font-mono mb-4">[React, Node.js, GraphQL]</p>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                                An intelligent chat interface using natural language processing to assist users with
+                                complex queries in real-time.
+                            </p>
+                            <div class="flex items-center gap-6 mt-auto pt-4 border-t border-white/5">
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article
+                            class="bg-dark-lighter border border-white/10 p-8 rounded-sm hover:border-neon-green/50 transition-all group flex flex-col h-full hover:-translate-y-2 duration-300">
+                            <h2
+                                class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+                                E-commerce</h2>
+                            <p class="text-xs text-neon-green font-mono mb-4">[Vue, Django, PostgreSQL]</p>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                                Full-stack platform with advanced filtering, cart management, and secure payment gateway
+                                integration.
+                            </p>
+                            <div class="flex items-center gap-6 mt-auto pt-4 border-t border-white/5">
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article
+                            class="bg-dark-lighter border border-white/10 p-8 rounded-sm hover:border-neon-green/50 transition-all group flex flex-col h-full hover:-translate-y-2 duration-300">
+                            <h2
+                                class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+                                Task Manager</h2>
+                            <p class="text-xs text-neon-green font-mono mb-4">[Svelte, Firebase]</p>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                                Minimalist task tracking application with real-time updates across devices and
+                                collaborative features.
+                            </p>
+                            <div class="flex items-center gap-6 mt-auto pt-4 border-t border-white/5">
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article
+                            class="bg-dark-lighter border border-white/10 p-8 rounded-sm hover:border-neon-green/50 transition-all group flex flex-col h-full hover:-translate-y-2 duration-300">
+                            <h2
+                                class="font-serif text-3xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+                                Pestagram</h2>
+                            <p class="text-xs text-neon-green font-mono mb-4">[React, TensorFlow.js]</p>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                                Image sharing platform for entomologists with AI-powered insect identification and
+                                tagging.
+                            </p>
+                            <div class="flex items-center gap-6 mt-auto pt-4 border-t border-white/5">
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                <a href="#"
+                                    class="text-white text-sm font-semibold flex items-center gap-2 hover:text-neon-green"><i
+                                        class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <!-- ================= SECTION 3: RESUME ================= -->
+        <section id="resume" class="min-h-screen flex items-center justify-center p-8 lg:p-20">
+            <div class="max-w-7xl w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+                    <!-- Experience Column -->
+                    <div class="relative">
+                        <header class="mb-8 md:mb-12">
+                            <h2 class="font-serif font-bold text-white tracking-wide text-2xl sm:text-4xl md:text-6xl">
+                                <span class="text-neon-green">Exp</span>erience
+                            </h2>
+                        </header>
+                        <div class="flex flex-col space-y-12">
+
+                            <article class="timeline-item relative pl-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="absolute left-0 top-[6px] w-4 h-4 rounded-full bg-neon-green border-4 border-dark z-10">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span
+                                        class="text-gray-500 text-xs tracking-widest font-medium uppercase font-mono">Oct
+                                        2023 - Present</span>
+                                    <h3 class="text-xl text-white font-normal uppercase tracking-wide mt-1 font-serif">
+                                        Senior Web Developer</h3>
+                                    <p class="text-gray-400 text-sm uppercase tracking-wider font-mono">Tech Innovations
+                                        Ltd.</p>
+                                </div>
+                            </article>
+
+                            <article class="timeline-item relative pl-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="absolute left-0 top-[6px] w-4 h-4 rounded-full bg-neon-green border-4 border-dark z-10">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span
+                                        class="text-gray-500 text-xs tracking-widest font-medium uppercase font-mono">May
+                                        2021 - Sep 2023</span>
+                                    <h3 class="text-xl text-white font-normal uppercase tracking-wide mt-1 font-serif">
+                                        Web Application Developer</h3>
+                                    <p class="text-gray-400 text-sm uppercase tracking-wider font-mono">Creative
+                                        Solutions Inc.</p>
+                                </div>
+                            </article>
+
+                            <article class="timeline-item relative pl-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="absolute left-0 top-[6px] w-4 h-4 rounded-full bg-neon-green border-4 border-dark z-10">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span
+                                        class="text-gray-500 text-xs tracking-widest font-medium uppercase font-mono">Jun
+                                        2020 - Apr 2021</span>
+                                    <h3 class="text-xl text-white font-normal uppercase tracking-wide mt-1 font-serif">
+                                        Junior Developer</h3>
+                                    <p class="text-gray-400 text-sm uppercase tracking-wider font-mono">Digital Craft
+                                        Agency</p>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <!-- Education Column -->
+                    <div class="relative">
+                        <header class="mb-8 md:mb-12">
+                            <h2 class="font-serif font-bold text-white tracking-wide text-2xl sm:text-4xl md:text-6xl">
+                                <span class="text-neon-green">Edu</span>cation
+                            </h2>
+                        </header>
+                        <div class="flex flex-col space-y-12">
+
+                            <article class="timeline-item relative pl-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="absolute left-0 top-[6px] w-4 h-4 rounded-full bg-neon-green border-4 border-dark z-10">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span
+                                        class="text-gray-500 text-xs tracking-widest font-medium uppercase font-mono">Sep
+                                        2017 - Jul 2021</span>
+                                    <h3 class="text-xl text-white font-normal uppercase tracking-wide mt-1 font-serif">
+                                        B.Sc. In Computer Science</h3>
+                                    <p class="text-gray-400 text-sm uppercase tracking-wider font-mono">University Of
+                                        Technology</p>
+                                </div>
+                            </article>
+
+                            <article class="timeline-item relative pl-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="absolute left-0 top-[6px] w-4 h-4 rounded-full bg-neon-green border-4 border-dark z-10">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span
+                                        class="text-gray-500 text-xs tracking-widest font-medium uppercase font-mono">Sep
+                                        2015 - Jun 2017</span>
+                                    <h3 class="text-xl text-white font-normal uppercase tracking-wide mt-1 font-serif">
+                                        High School Diploma</h3>
+                                    <p class="text-gray-400 text-sm uppercase tracking-wider font-mono">City Science
+                                        College</p>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 4: INSIGHTS (BLOG) ================= -->
+        <section id="blog" class="min-h-screen flex flex-col justify-center p-8 lg:p-20">
+            <div class="max-w-6xl w-full mx-auto">
+                <header class="mb-12 md:mb-16">
+                    <h1 class="text-2xl sm:text-4xl md:text-6xl font-serif text-white tracking-tight font-extrabold">
+                        Latest <span class="text-neon-green">Blogs</span>
+                    </h1>
+                </header>
+
+                <div id="blog-container" class="flex flex-col gap-10">
+
+                    <!-- Post 1 -->
+                    <article class="group pb-10 border-b border-white/10">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                            <div class="flex-1 space-y-3 max-w-3xl">
+                                <span
+                                    class="font-mono text-sm tracking-wider block text-neon-green opacity-80">05.08.2024</span>
+                                <h2
+                                    class="text-xl sm:text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
+                                    Exploring the Future of AI in Web Development
+                                </h2>
+                                <p class="text-lg leading-relaxed font-light text-gray-400">
+                                    An in-depth look at how artificial intelligence is reshaping the landscape of web
+                                    applications and developer workflows.
+                                </p>
+                            </div>
+                            <div class="w-full md:w-[280px] shrink-0 overflow-hidden rounded-lg">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB6hhTU8D1l7WdxlsPx3Lvwy2w8h2gewygMd5Cx_BU0AC42ZYRaokydfPebl7MWKFaRPPZb_HpANO5IEtrUf2oe8Yf959YUggwgv6ExeIYOejf4yhrjHb02LA25swrTBiLDcZvp2IsL5MEdTxBfvw2q9UlOS-C2o2Zk8c3Pg_tSf_LWWmGQ8b_tnWXF-1EttkE4flRDyWmu1gCgNCiGe0lH9fenJfKNYNQ_T_DBzlgM658MjWTC1zDlhrPu1PT3uoCLHX8iqlgdxE"
+                                    alt="AI Blog"
+                                    class="w-full h-[160px] object-cover hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="group pb-10 border-b border-white/10">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                            <div class="flex-1 space-y-3 max-w-3xl">
+                                <span
+                                    class="font-mono text-sm tracking-wider block text-neon-green opacity-80">22.07.2024</span>
+                                <h2
+                                    class="text-xl sm:text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
+                                    Mastering Minimalist Brutalism
+                                </h2>
+                                <p class="text-lg leading-relaxed font-light text-gray-400">
+                                    A comprehensive guide to implementing the brutalist design trend in modern web
+                                    projects without sacrificing usability.
+                                </p>
+                            </div>
+                            <div class="w-full md:w-[280px] shrink-0 overflow-hidden rounded-lg">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3pGsu7b74OkwoaWkovEub8RuAqYRqjF36ppqAad4onw-ybhIKWnrImlU-28wkJOzO9shJ1KdHxF3IkDAIfe3buqZPp18eO5Qj9HI5Jdg4PJx1CeA63tUWkncUwNmvb-fcPYhaDh73mwwkNbZYYysIynLcHaIlDNSmDcdN0C2gd5uf8exwDZoC_SThYI5fuoAR-ySLa5F4g8YXy1WOMDAQdpm_aFjJMBUCeadWKf7_-aar5DFAL-q8_MdD7ePhgxDhARo8X_N3nCQ"
+                                    alt="Brutalism Blog"
+                                    class="w-full h-[160px] object-cover hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="group pb-10 border-white/10">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                            <div class="flex-1 space-y-3 max-w-3xl">
+                                <span
+                                    class="font-mono text-sm tracking-wider block text-neon-green opacity-80">10.07.2024</span>
+                                <h2
+                                    class="text-xl sm:text-3xl md:text-4xl font-serif text-white group-hover:text-neon-green transition-colors font-bold leading-tight cursor-pointer">
+                                    Optimizing React Performance
+                                </h2>
+                                <p class="text-lg leading-relaxed font-light text-gray-400">
+                                    Practical tips, memoization techniques, and code-splitting strategies for building
+                                    faster and more efficient React applications.
+                                </p>
+                            </div>
+                            <div class="w-full md:w-[280px] shrink-0 overflow-hidden rounded-lg">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFLC9yWO0o31qBKirt-EBcprwN-rYGQMLUgPEiAVGRJb7U7AT7QViGlZDGASG-MXIvh-6fAnQpZ_LWqgPH7UqA2Vxl8kU57AJbWgKm4hvtYJJxUxQ4_stbZTjZMAsnTGTTiKxJlBHynvvxuW57fNaHh3P6TjinnhGOyEt48JUzA5qxBdU-6UVRr7UxgGI_M6gvPBYfzsrGt2nR3lYMidR3vYr1_wmEDXWw9U3XbeSXFWso0rgqbDgWmHB6-qI44lUuVdKFtzY2N14"
+                                    alt="React Blog"
+                                    class="w-full h-[160px] object-cover hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 5: CONTACT (LAST SECTION) ================= -->
+        <section id="contact" class="min-h-screen flex flex-col justify-center relative p-8 lg:p-20">
+            <div class="max-w-6xl w-full mx-auto flex flex-col justify-center h-full">
+                <header class="mb-12 md:mb-16">
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl text-white font-serif font-bold tracking-tight">Let's
+                        <span class="text-neon-green">Connect</span>
+                    </h1>
+                </header>
+
+                <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+                    <!-- Form -->
+                    <div class="w-full lg:w-1/2 max-w-xl">
+                        <form id="contact-form" class="flex flex-col gap-6">
+                            <div class="relative group">
+                                <input type="text" id="contact-name" name="name" placeholder="Name"
+                                    class="w-full bg-white/5 border border-white/20 rounded-md px-4 py-4 text-gray-300 font-mono focus:bg-white/10 focus:ring-0 focus:border-neon-green input-glow transition-all duration-300 outline-none placeholder-gray-500"
+                                    required />
+                            </div>
+                            <div class="relative group">
+                                <input type="email" id="contact-email" name="email" placeholder="Email"
+                                    class="w-full bg-white/5 border border-white/20 rounded-md px-4 py-4 text-gray-300 font-mono focus:bg-white/10 focus:ring-0 focus:border-neon-green focus:shadow-[0_0_15px_rgba(0,255,157,0.2)] transition-all duration-300 outline-none placeholder-gray-500"
+                                    required />
+                            </div>
+                            <div class="relative group">
+                                <input type="text" id="contact-subject" name="subject" placeholder="Subject"
+                                    class="w-full bg-white/5 border border-white/20 rounded-md px-4 py-4 text-gray-300 font-mono focus:bg-white/10 focus:ring-0 focus:border-neon-green focus:shadow-[0_0_15px_rgba(0,255,157,0.2)] transition-all duration-300 outline-none placeholder-gray-500"
+                                    required />
+                            </div>
+                            <div class="relative group">
+                                <textarea rows="5" id="contact-message" name="message" placeholder="Message"
+                                    class="w-full bg-white/5 border border-white/20 rounded-md px-4 py-4 text-gray-300 font-mono focus:bg-white/10 focus:ring-0 focus:border-neon-green focus:shadow-[0_0_15px_rgba(0,255,157,0.2)] transition-all duration-300 outline-none resize-none placeholder-gray-500"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" id="contact-submit-btn"
+                                class="self-start bg-neon-green hover:bg-[#00cc7d] text-black font-bold py-4 px-10 rounded-md transition-all duration-200 mt-2 tracking-wide uppercase">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="w-full lg:w-1/2 flex flex-col justify-between h-full">
+                        <div class="flex flex-col gap-8">
+                            <div>
+                                <h2 class="text-2xl text-gray-400 mb-2 font-mono">Email Me</h2>
+                                <a href="mailto:heshanhfernando@gmail.com"
+                                    class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-serif hover:text-neon-green transition-colors leading-tight break-all">
+                                    heshanhfernando@gmail.com
+                                </a>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl text-gray-400 mb-4 font-mono">Follow Me</h2>
+                                <div id="contact-social-links" class="flex gap-6">
+                                    <!-- Social links will be populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer inside Contact Section -->
+            <footer
+                class="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-serif font-bold text-white">Thanks for stopping by!</h2>
+                </div>
+                <div class="flex flex-col items-center md:items-end gap-4">
+                    <div id="footer-socials" class="flex gap-6 text-2xl text-gray-400">
+                        <!-- Footer socials will be populated dynamically -->
+                    </div>
+                    <p id="footer-copyright" class="text-gray-600 text-sm font-mono">
+                        © 2023 Hirusha. All Rights Reserved
+                    </p>
+                </div>
+            </footer>
+        </section>
+
+    </div>
+    <!-- END: Main Content Wrapper -->
+
+    <script>
+        // Function to hide the loading spinner
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader && !loader.classList.contains('fade-out')) {
+                loader.classList.add('fade-out');
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }
+        }
+
+        // Hide loading spinner on window load
+        window.addEventListener('load', hideLoader);
+
+        // Fallback: hide loader after 5 seconds even if resources haven't finished loading
+        setTimeout(hideLoader, 5000);
+    </script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Load Portfolio Data -->
     <script src="assets/js/data.js"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- Load Dynamic Content Script -->
+    <script src="assets/js/site.js"></script>
+
 </body>
 
 </html>

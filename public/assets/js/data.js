@@ -7,6 +7,7 @@ window.portfolioData = {
         "email": "heshanhfernando@gmail.com",
         "location": "Colombo, LK",
         "heroTagline": "Building Intelligence for the Web.",
+        "heroHeadline": "Hey, It’s Hirusha,",
         "typewriterRoles": [
             "Software Developer",
             "AI Developer",
