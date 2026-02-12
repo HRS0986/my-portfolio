@@ -7,6 +7,7 @@ window.portfolioData = {
         "email": "heshanhfernando@gmail.com",
         "location": "Colombo, LK",
         "heroTagline": "Building Intelligence for the Web.",
+        "heroHeadline": "Hey, It’s Hirusha,",
         "typewriterRoles": [
             "Software Developer",
             "AI Developer",
@@ -225,6 +226,21 @@ window.portfolioData = {
             ],
             "live": "#",
             "thumbnail": "/public/assets/images/medium.png"
+        },
+        {
+            "title": "ZoteroPDF",
+            "description": "A Zotero plugin that enables you to export your library items and collections as PDF documents with ease",
+            "tags": [
+                "Typescript"
+            ],
+            "github": [
+                {
+                    "url": "https://github.com/HRS0986/ZoteroPDF",
+                    "title": "Code"
+                }
+            ],
+            "live": "https://github.com/HRS0986/ZoteroPDF/releases",
+            "thumbnail": "/public/assets/images/zoteropdf.png"
         }
     ],
     "blogs": [

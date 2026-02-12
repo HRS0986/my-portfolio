@@ -63,13 +63,6 @@ if (document.readyState === 'loading') {
 function updateHeroSection(data) {
     const personal = data.personal;
 
-    // Update profile image
-    const profileImg = document.querySelector('.profile-clip img');
-    if (profileImg && personal.photo) {
-        profileImg.src = personal.photo;
-        profileImg.alt = `${personal.firstName} ${personal.lastName}`;
-    }
-
     // Update name
     const nameElement = document.querySelector('.font-serif.text-5xl.font-bold.text-white.mb-2');
     if (nameElement) {
@@ -106,15 +99,19 @@ function updateHeroSection(data) {
     }
 
     // Update hero title
-    const heroTitle = document.querySelector('.font-serif.font-bold.text-white.text-5xl');
+    const heroTitle = document.getElementById('hero-title');
     if (heroTitle) {
-        heroTitle.textContent = `${personal.firstName} ${personal.lastName}`;
+        heroTitle.textContent = personal.heroHeadline || "Hey, It’s Hirusha,";
     }
 
     // Update hero role with typewriter animation
     const heroRole = document.getElementById('typewriter');
     if (heroRole && data.personal.typewriterRoles && data.personal.typewriterRoles.length > 0) {
-        startTypewriter(heroRole, data.personal.typewriterRoles);
+        console.log('Starting typewriter with roles:', data.personal.typewriterRoles);
+        // Small delay to ensure smooth transition after loader
+        setTimeout(() => {
+            startTypewriter(heroRole, data.personal.typewriterRoles);
+        }, 500);
     }
 
     // Update hero description
@@ -390,43 +387,38 @@ function startTypewriter(element, roles) {
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 100;
-    let deletingSpeed = 50;
-    let pauseAfterTyping = 2000;
-    let pauseAfterDeleting = 500;
+    let typeSpeed = 100;
 
     function type() {
         const currentRole = roles[roleIndex];
 
         if (isDeleting) {
             // Delete characters
-            element.textContent = currentRole.substring(0, charIndex - 1);
+            element.innerHTML = currentRole.substring(0, charIndex - 1);
             charIndex--;
-
-            if (charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                setTimeout(type, pauseAfterDeleting);
-                return;
-            }
-
-            setTimeout(type, deletingSpeed);
+            typeSpeed = 50;
         } else {
             // Type characters
-            element.textContent = currentRole.substring(0, charIndex + 1);
+            element.innerHTML = currentRole.substring(0, charIndex + 1);
             charIndex++;
-
-            if (charIndex === currentRole.length) {
-                isDeleting = true;
-                setTimeout(type, pauseAfterTyping);
-                return;
-            }
-
-            setTimeout(type, typingSpeed);
+            typeSpeed = 100;
         }
+
+        // Logic for pausing and switching roles
+        if (!isDeleting && charIndex === currentRole.length) {
+            isDeleting = true;
+            typeSpeed = 2000; // Pause at the end of a word
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500; // Pause before next word
+        }
+
+        setTimeout(type, typeSpeed);
     }
 
-    // Start the animation
+    // Clear contents and start
+    element.innerHTML = '';
     type();
 }
 
