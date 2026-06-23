@@ -3,7 +3,7 @@ window.portfolioData = {
         "firstName": "Hirusha",
         "lastName": "Fernando",
         "title": "DevPortfolio | Web & AI Developer",
-        "about": "AI-focused web application developer with 5+ years of experience building real-world digital products. Final-year BSc (Hons) Artificial Intelligence undergraduate at the University of Moratuwa, Sri Lanka, passionate about solving challenging problems with AI and machine learning.",
+        "about": "AI & Software Engineer with 5+ years of experience building real-world digital products. Final year BSc (Hons) Artificial Intelligence undergraduate at the University of Moratuwa, Sri Lanka. passionate about solving challenging problems with AI.",
         "email": "heshanhfernando@gmail.com",
         "location": "Colombo, LK",
         "heroTagline": "Building Intelligence for the Web.",
@@ -129,7 +129,7 @@ window.portfolioData = {
             "period": "2022 - Present"
         },
         {
-            "degree": "GCE Advanced Level",
+            "degree": "G.C.E. Advanced Level",
             "university": "Maliyadeva College, Kurunegala",
             "specialization": "Physical Science",
             "period": "2017 - 2020"
@@ -259,11 +259,11 @@ window.portfolioData = {
             "thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*DhbRyUT8dNLaATSAtjUzcg.png"
         },
         {
-            "date": "Dec 18, 2025",
-            "title": "When LLM Superpowers Become Weaknesses",
-            "description": "Explores how core LLM capabilities like in-context learning and multilinguality can be exploited as vulnerabilities to perform backdoor attacks, allowing attackers to implant hidden malicious behaviors without degrading normal model performance.",
-            "url": "https://heshanhfernando.medium.com/when-llm-superpowers-become-weaknesses-442e532e4e26",
-            "thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*pUkKdwPHaokYpkRRZKZKMg.png"
+            "date": "June 15, 2026",
+            "title": "My Visual Studio Code Setup For 2026",
+            "description": "My productivity-focused development environment for .NET, Python, AI, and frontend development.",
+            "url": "https://levelup.gitconnected.com/my-visual-studio-code-setup-for-2026-3964241bd651",
+            "thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*5pj8_GEZu1AA5SHt4Fy2mQ.png"
         }
     ]
 };
