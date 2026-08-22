@@ -63,6 +63,14 @@ window.portfolioData = {
             ]
         },
         {
+            "period": "2026 August - Present",
+            "role": "AI Engineer",
+            "type": "Full-time",
+            "company": "KAYA",
+            "description": "Contributing to the development of AI agents and tools for KAYA's AI platform, focusing on enhancing ai workflow builders.",
+            "skills": []
+        },
+        {
             "period": "2025 Feb - 2025 July",
             "role": "Intern AI Engineer",
             "type": "Full-time",
