@@ -2,9 +2,8 @@ window.portfolioData = {
     "personal": {
         "firstName": "Hirusha",
         "lastName": "Fernando",
-        "title": "DevPortfolio | Web & AI Developer",
-        "about": "AI & Software Engineer with 5+ years of experience building real-world digital products. Final year BSc (Hons) Artificial Intelligence undergraduate at the University of Moratuwa, Sri Lanka. passionate about solving challenging problems with AI.",
-        "email": "heshanhfernando@gmail.com",
+        "title": "HIRUSHA | Software & AI Engineer",
+"about": "AI & Software Engineer with 5+ years of experience building real-world digital products. BSc (Hons) in Artificial Intelligence graduate from the University of Moratuwa, Sri Lanka, currently working as an AI Engineer at KAYA. Passionate about solving challenging problems with AI.",        "email": "heshanhfernando@gmail.com",
         "location": "Colombo, LK",
         "heroTagline": "Building Intelligence for the Web.",
         "heroHeadline": "Hey, It’s Hirusha,",
@@ -61,6 +60,14 @@ window.portfolioData = {
                 "FastAPI",
                 "LangChain",
             ]
+        },
+        {
+            "period": "2026 August - Present",
+            "role": "AI Engineer",
+            "type": "Full-time",
+            "company": "KAYA",
+            "description": "Contributing to the development of AI agents and tools for KAYA's AI platform, focusing on enhancing ai workflow builders.",
+            "skills": []
         },
         {
             "period": "2025 Feb - 2025 July",
@@ -126,7 +133,7 @@ window.portfolioData = {
             "degree": "Bachelor Of Science Honours In Artificial Intelligence",
             "university": "University of Moratuwa",
             "specialization": "Specialization in Artificial Intelligence",
-            "period": "2022 - Present"
+            "period": "2022 Aug - 2026 Aug"
         },
         {
             "degree": "G.C.E. Advanced Level",
